@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商城品牌 - $!config.title - Powered by ISkyShop</title>
+<meta name="keywords" content="$!config.keywords" />
+<meta name="description" content="$!config.description" />
+<meta name="generator" content="ISkyShop 1.4" />
+<meta name="author" content="www.iskyshop.com">
+<meta name="copyright" content="ISkyShop Inc. All Rights Reserved">
+<link href="$!webPath/resources/style/system/front/default/css/public.css" type="text/css" rel="stylesheet" />
+<link href="$!webPath/resources/style/system/front/default/css/index.css" type="text/css" rel="stylesheet" />
+<link href="$!webPath/resources/style/system/front/default/css/goods.css" type="text/css" rel="stylesheet" />
+<script src="$!webPath/resources/js/jquery-1.6.2.js"></script>
+<script>
+jQuery(document).ready(function(e) {
+     var brand_list_cls=jQuery(".brand_list_cls").offset().top;
+  jQuery(window).scroll(function(){
+      var top= jQuery(".brand_list_cls").offset().top;
+	  var scrolla=jQuery(window).scrollTop();
+	  var i=top-scrolla;
+	 if(i<=0){
+	 var height =jQuery("#float_box").css("height"); 
+	   jQuery("#remain_box").show().css("height",height);		 
+	   jQuery(".brand_list_cls").addClass("brand_list_cls_top");  
+	 }
+	 if(scrolla<brand_list_cls){
+	    jQuery("#remain_box").hide().css("height","0px");
+	   jQuery(".brand_list_cls").removeClass("brand_list_cls_top");
+	 }
+  });
+  
+  jQuery("a[id^=ReturnWord_]").click(function(){
+	var mark = jQuery(this).attr("mark");
+	var status = jQuery("#brand_"+mark).attr("status");
+	if(status=="0"){
+	  var t= jQuery(".brand_list_cls").offset().top;
+	  var top = jQuery("#brand_"+mark).offset().top;
+	  var scrolla=jQuery(window).scrollTop();
+	  var i=t-scrolla;
+	 if(i>0){
+		 top = top-20;
+		 }
+	  var height =jQuery("#float_box").height(); 
+	  var i=top-height-30;
+	  jQuery(window).scrollTop(i);
+	  }
+	  });
+
+});
+</script>
+</head>
+
+<body>
+$!httpInclude.include("/top.htm")
+<div class="main"> $!httpInclude.include("/head.htm") 
+  $!httpInclude.include("/nav1.htm")
+  <div class="index">
+    <div class="position">当前位置：<a href="$!webPath/index.htm" >首页</a> > <span>品牌列表</span></div>
+    <div class="index2">
+      <div class="brand_recommend">
+        <h3>推荐品牌</h3>
+        <div class="brand_recommend_box"> #foreach($gb in $gbs) <span><a  href="$!webPath/brand_goods_$!{gb.id}.htm" target="_blank"><b><img src="$!imageWebServer/$!gb.brandLogo.path/$!gb.brandLogo.name" width="98" height="35" /></b><em>$!gb.name</em></a></span> #end </div>
+      </div>
+      <div class="main">
+      <div id="remain_box" style="display:none">
+       </div>
+        <div class="brand_list_cls" id="float_box">
+          <dl>
+            <dt><span class="brand_sp">分类：</span></dt>
+            <dd>
+              <div class="brand_cls_a">
+              <a href="$!webPath/brand.htm" #if(!$!gbc_id) class="this" #end>全部</a> 
+              #foreach($gbc in $gbcs)
+               <a href="$!webPath/brand.htm?gbc_id=$!{gbc.id}" #if($!gbc_id==$!{gbc.id}) class="this" #end >$!gbc.name</a>
+               #end </div>
+            </dd>
+          </dl>
+          <dl>
+            <dt><span class="brand_sp">字母：</span></dt>
+            <dd>
+              <div class="brand_cls_a">#foreach($list in $all_list) <a href="javascript:void(0);" id="ReturnWord_$!{list.id}" mark="$!{list.get('word')}">$!list.get("word")</a> #end </div>
+            </dd>
+          </dl>
+        </div>
+       
+      </div>
+      <div class="brand_list"> 
+        #foreach($list in $all_list)
+        #if($!list.get("brand_list").size()>0)
+        <h3 id="brand_$!{list.get('word')}" status="0">$!list.get("word")</h3>
+        <div class="brand_list_box"> #foreach($gb in $!list.get("brand_list")) <span><a href="$!webPath/brand_goods_$!{gb.id}.htm"><b><img src="$!webPath/$!gb.brandLogo.path/$!gb.brandLogo.name" width="98" height="35" /></b><em>$!gb.name</em></a></span> #end </div>
+        #end
+        #end </div>
+    </div>
+  </div>
+  $!httpInclude.include("/footer.htm") </div>
+</body>
+</html>

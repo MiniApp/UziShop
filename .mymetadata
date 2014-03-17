@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="SkyShop"
+  id="myeclipse.1394780392748"
+  context-root="/iskyshop"
+  j2ee-spec="5.0"
+  archive="SkyShop.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
