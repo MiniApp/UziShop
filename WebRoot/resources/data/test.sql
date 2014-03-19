@@ -4,7 +4,7 @@ Author: ISkyShop
 company:沈阳网之商科技有限公司
 Date: 2014-03-03 15:01:33
 */
-
+--SET NAMES 'utf8';
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------

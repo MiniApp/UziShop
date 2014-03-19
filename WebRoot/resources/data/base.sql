@@ -4,7 +4,7 @@ Author: ISkyShop
 company:沈阳网之商科技有限公司
 Date: 2014-03-03 17:44:37
 */
-
+--SET NAMES 'utf8'; 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
@@ -2756,7 +2756,7 @@ CREATE TABLE `iskyshop_sysconfig` (
   `uc_ip` varchar(255) default NULL,
   `uc_key` varchar(255) default NULL,
   `uc_table_preffix` varchar(255) default NULL,
-  `currency_code` varchar(255) default '������������������������������������������������������������������������������������������������������������������������������������������������������������������',
+  `currency_code` varchar(255) default NULL,
   `bargain_validity` int(11) default '3',
   `delivery_amount` int(11) default '50',
   `delivery_status` int(11) default '0',

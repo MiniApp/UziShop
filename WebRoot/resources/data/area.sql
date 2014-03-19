@@ -4,7 +4,7 @@ Author: erikchang
 company:沈阳誉凯利明科技有限公司
 Create Date: 2012-11-24 10:51:03
 */
-
+--SET NAMES 'utf8'; 
 -- ----------------------------
 -- Create Datas  
 -- ----------------------------
