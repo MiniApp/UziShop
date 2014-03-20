@@ -236,8 +236,8 @@ public class ImageCompress extends Frame {
     public static float getRatio(int width, int height, int maxWidth, int maxHeight) {
         float Ratio = 1.0F;
 
-        float widthRatio = maxWidth / width;
-        float heightRatio = maxHeight / height;
+        float widthRatio = (float)maxWidth / (float)width;
+        float heightRatio = (float)maxHeight / (float)height;
         if ((widthRatio < 1.0D) || (heightRatio < 1.0D)) {
             Ratio = (widthRatio <= heightRatio) ? widthRatio : heightRatio;
         }

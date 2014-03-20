@@ -379,7 +379,7 @@ public class GoodsManageAction
       vo.setVo_add_time(obj.getAddTime().getTime());
       vo.setVo_goods_salenum(obj.getGoods_salenum());
       LuceneUtil lucene = LuceneUtil.instance();
-      LuceneUtil.setIndex_path(goods_lucene_path);
+      lucene.setIndex_path(goods_lucene_path);
       lucene.update(CommUtil.null2String(obj.getId()), vo);
     } else {
       String goods_lucene_path = System.getProperty("user.dir") + 

@@ -139,7 +139,6 @@ public class DatabaseTools implements IBackup {
 
             conn.setAutoCommit(false);
             for (String sqlStr : sqlStrList) {
-                sqlStr = new String(sqlStr.getBytes("iso-8859-1"),"utf-8");
                 int index = sqlStr.indexOf("INSERT");
                 if (-1 == index) {
                     stmt.addBatch(sqlStr);
@@ -150,7 +149,6 @@ public class DatabaseTools implements IBackup {
             stmt.executeBatch();
 
             for (String sqlStr : sqlStrList) {
-                sqlStr = new String(sqlStr.getBytes("iso-8859-1"),"utf-8");
                 int index = sqlStr.indexOf("INSERT");
                 if (-1 != index) {
                     System.out.println(sqlStr);

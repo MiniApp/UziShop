@@ -197,10 +197,10 @@ public class LuceneUtil
     return pList;
   }
 
-  public void writeIndex(List<LuceneVo> list)
+  public void writeIndex(List<LuceneVo> list, String index_path)
     throws IOException
   {
-    IndexWriter writer = openIndexWriter();
+    IndexWriter writer = openIndexWriter(index_path);
     try {
       for (LuceneVo lucenceVo : list) {
         Document document = builderDocument(lucenceVo);
@@ -212,11 +212,11 @@ public class LuceneUtil
     }
   }
 
-  public void writeIndex(LuceneVo vo)
+  public void writeIndex(LuceneVo vo, String index_path)
   {
     IndexWriter writer = null;
     try {
-      writer = openIndexWriter();
+      writer = openIndexWriter(index_path);
       Document document = builderDocument(vo);
       writer.addDocument(document);
       writer.optimize();
@@ -328,7 +328,7 @@ public class LuceneUtil
       files[i].delete();
   }
 
-  private IndexWriter openIndexWriter() throws IOException
+  private IndexWriter openIndexWriter(String index_path) throws IOException
   {
     IndexWriterConfig indexWriterConfig = new IndexWriterConfig(
       Version.LUCENE_35, analyzer);

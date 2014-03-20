@@ -143,7 +143,7 @@ public class WebForm {
             PropertyDescriptor[] entity_propertys;
             PropertyDescriptor pd;
             if (field.indexOf(".") > 0) {
-              Class entity = Class.forName("com.iskyshop.domain." + 
+              Class entity = Class.forName("com.iskyshop.foundation.domain." + 
                 CommUtil.first2upper(field.substring(2, 
                 field.indexOf("."))));
 

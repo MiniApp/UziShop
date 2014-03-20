@@ -22,7 +22,7 @@ public class LuceneThread
     LuceneUtil.setIndex_path(this.path);
     lucene.deleteAllIndex(true);
     try {
-      lucene.writeIndex(this.vo_list);
+      lucene.writeIndex(this.vo_list, this.path);
     } catch (IOException e) {
       e.printStackTrace();
     }
