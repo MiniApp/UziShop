@@ -1,12 +1,5 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
-import com.iskyshop.core.query.support.IPageList;
-import com.iskyshop.foundation.domain.Accessory;
-import com.iskyshop.lucene.LuceneResult;
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGEncodeParam;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Font;
@@ -24,7 +17,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintStream;
 import java.io.StringReader;
 import java.math.BigDecimal;
 import java.net.URL;
@@ -45,14 +37,23 @@ import java.util.TreeSet;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.swing.ImageIcon;
+
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.iskyshop.core.query.support.IPageList;
+import com.iskyshop.foundation.domain.Accessory;
+import com.iskyshop.lucene.LuceneResult;
+import com.sun.image.codec.jpeg.JPEGCodec;
+import com.sun.image.codec.jpeg.JPEGEncodeParam;
+import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 public class CommUtil {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -87,6 +88,7 @@ public class CommUtil {
         return s;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static List<String> str2list(String s) throws IOException {
         List list = new ArrayList();
         if ((s != null) && (!(s.equals("")))) {
@@ -171,6 +173,7 @@ public class CommUtil {
         return newStr;
     }
 
+    @SuppressWarnings({ "rawtypes", "unused", "unchecked" })
     public static Map saveFileToServer(HttpServletRequest request, String filePath, String saveFilePathName,
             String saveFileName, String[] extendes) throws IOException {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
@@ -236,7 +239,7 @@ public class CommUtil {
                 map.put("error", errors);
                 map.put("oldName", file.getOriginalFilename());
             } else {
-                errors.add("���������չ��");
+                errors.add("不允许的扩展名");
             }
         } else {
             map.put("width", Integer.valueOf(0));
@@ -249,6 +252,7 @@ public class CommUtil {
         return map;
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public static boolean isImg(String extend) {
         boolean ret = false;
         List<String> list = new ArrayList();
@@ -327,6 +331,7 @@ public class CommUtil {
         }
     }
 
+    @SuppressWarnings({ "unused" })
     public static boolean createSmall(String source, String target, int width, int height) {
         try {
             File sourceFile = new File(source);
@@ -344,6 +349,7 @@ public class CommUtil {
         return false;
     }
 
+    @SuppressWarnings("unused")
     public static boolean createSmall_old(String source, String target, int width) {
         try {
             File sourceFile = new File(source);
@@ -362,6 +368,7 @@ public class CommUtil {
         return false;
     }
 
+    @SuppressWarnings("serial")
     public static boolean waterMarkWithText(String filePath, String outPath, String text, String markContentColor,
             Font font, int pos, float qualNum) {
         ImageIcon imgIcon = new ImageIcon(filePath);
@@ -450,6 +457,7 @@ public class CommUtil {
         return ret;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static List toRowChildList(List list, int perNum) {
         List l = new ArrayList();
         if (list == null) {
@@ -466,6 +474,7 @@ public class CommUtil {
         return l;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static List copyList(List list, int begin, int end) {
         List l = new ArrayList();
         if (list == null)
@@ -482,6 +491,7 @@ public class CommUtil {
         return ((obj != null) && (!(obj.toString().equals(""))));
     }
 
+    @SuppressWarnings("unused")
     public static void copyFile(String oldPath, String newPath) {
         try {
             int bytesum = 0;
@@ -861,6 +871,7 @@ public class CommUtil {
         return s.trim().indexOf(sub.trim());
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked", "unused" })
     public static Map cal_time_space(Date begin, Date end) {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         long l = end.getTime() - begin.getTime();
@@ -981,6 +992,7 @@ public class CommUtil {
         return url;
     }
 
+    @SuppressWarnings("unused")
     public static String filterHTML(String content) {
         Whitelist whiteList = new Whitelist();
         String s = Jsoup.clean(content, user_content_filter);
@@ -1011,6 +1023,7 @@ public class CommUtil {
         return 0;
     }
 
+    @SuppressWarnings("unused")
     public static int[] readImgWH(String imgurl) {
         boolean b = false;
         try {
@@ -1063,6 +1076,7 @@ public class CommUtil {
         return a;
     }
 
+    @SuppressWarnings("deprecation")
     public static boolean del_acc(HttpServletRequest request, Accessory acc) {
         boolean ret = true;
         boolean ret1 = true;
@@ -1150,6 +1164,7 @@ public class CommUtil {
         return null;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static Set<Integer> randomInt(int a, int length) {
         Set list = new TreeSet();
         int size = length;
@@ -1164,6 +1179,7 @@ public class CommUtil {
         return list;
     }
 
+    @SuppressWarnings("unused")
     public static Double formatDouble(Object obj, int len) {
         Double ret = Double.valueOf(0.0D);
         String format = "0.0";

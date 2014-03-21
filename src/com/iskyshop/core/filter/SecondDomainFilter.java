@@ -1,12 +1,7 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.filter;
 
-import com.iskyshop.core.tools.CommUtil;
-import com.iskyshop.foundation.domain.SysConfig;
-import com.iskyshop.foundation.domain.User;
-import com.iskyshop.foundation.service.ISysConfigService;
-import com.iskyshop.foundation.service.IUserService;
 import java.io.IOException;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -16,9 +11,14 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.iskyshop.core.tools.CommUtil;
+import com.iskyshop.foundation.domain.User;
+import com.iskyshop.foundation.service.ISysConfigService;
+import com.iskyshop.foundation.service.IUserService;
 
 @Component
 public class SecondDomainFilter implements Filter {
@@ -32,6 +32,7 @@ public class SecondDomainFilter implements Filter {
     public void destroy() {
     }
 
+    @SuppressWarnings("unused")
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException,
             ServletException {
         HttpServletRequest request = (HttpServletRequest) req;

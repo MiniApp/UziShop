@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.filter;
 
 import com.iskyshop.core.tools.CommUtil;
@@ -35,8 +34,8 @@ public class NorLogoutFilter extends LogoutFilter {
             this.userService.update(user);
             SysLog log = new SysLog();
             log.setAddTime(new Date());
-            log.setContent(user.getTrueName() + "ÓÚ" + CommUtil.formatTime("yyyy-MM-dd HH:mm:ss", new Date()) + "ÍË³öÏµÍ³");
-            log.setTitle("ÓÃ»§ÍË³ö");
+            log.setContent(user.getTrueName() + "ï¿½ï¿½" + CommUtil.formatTime("yyyy-MM-dd HH:mm:ss", new Date()) + "ï¿½Ë³ï¿½ÏµÍ³");
+            log.setTitle("ï¿½Ã»ï¿½ï¿½Ë³ï¿½");
             log.setType(0);
             log.setUser(user);
             log.setIp(CommUtil.getIpAddr(request));

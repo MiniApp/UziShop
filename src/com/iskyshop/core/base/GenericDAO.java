@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.base;
 
 import com.iskyshop.core.dao.IGenericDAO;
@@ -31,8 +30,9 @@ public class GenericDAO<T> implements IGenericDAO<T> {
         this.geDao = geDao;
     }
 
+    @SuppressWarnings("unchecked")
     public GenericDAO() {
-        this.entityClass = ((Class) ((java.lang.reflect.ParameterizedType) super.getClass().getGenericSuperclass())
+        this.entityClass = ((Class<T>) ((java.lang.reflect.ParameterizedType) super.getClass().getGenericSuperclass())
                 .getActualTypeArguments()[0]);
     }
 
@@ -44,14 +44,17 @@ public class GenericDAO<T> implements IGenericDAO<T> {
         return this.geDao.batchUpdate(jpql, params);
     }
 
+    @SuppressWarnings("rawtypes")
     public List executeNamedQuery(String queryName, Object[] params, int begin, int max) {
         return this.geDao.executeNamedQuery(queryName, params, begin, max);
     }
 
+    @SuppressWarnings("rawtypes")
     public List executeNativeNamedQuery(String nnq) {
         return this.geDao.executeNativeNamedQuery(nnq);
     }
 
+    @SuppressWarnings("rawtypes")
     public List executeNativeQuery(String nnq, Object[] params, int begin, int max) {
         return this.geDao.executeNativeQuery(nnq, params, begin, max);
     }
@@ -60,6 +63,7 @@ public class GenericDAO<T> implements IGenericDAO<T> {
         return this.geDao.executeNativeSQL(nnq);
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public List find(String query, Map params, int begin, int max) {
         return getGeDao().find(this.entityClass, query, params, begin, max);
     }
@@ -68,14 +72,17 @@ public class GenericDAO<T> implements IGenericDAO<T> {
         this.geDao.flush();
     }
 
+    @SuppressWarnings("unchecked")
     public T get(Serializable id) {
         return (T) getGeDao().get(this.entityClass, id);
     }
 
+    @SuppressWarnings("unchecked")
     public T getBy(String propertyName, Object value) {
         return (T) getGeDao().getBy(this.entityClass, propertyName, value);
     }
 
+    @SuppressWarnings("rawtypes")
     public List query(String query, Map params, int begin, int max) {
         return getGeDao().query(query, params, begin, max);
     }

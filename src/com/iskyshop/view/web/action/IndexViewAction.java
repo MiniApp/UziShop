@@ -158,7 +158,7 @@ public class IndexViewAction {
         List<GoodsCart> list = new ArrayList();
         List<StoreCart> cart = new ArrayList();
         List user_cart = new ArrayList();
-        List cookie_cart = new ArrayList();
+        List<StoreCart> cookie_cart = new ArrayList();
         User user = null;
         if (SecurityUserHolder.getCurrentUser() != null) {
             user = this.userService.getObjById(SecurityUserHolder.getCurrentUser().getId());
@@ -236,11 +236,11 @@ public class IndexViewAction {
             if (k != 0)
                 cart.add((StoreCart) sc);
         }
-        for (StoreCart sc = (StoreCart) cookie_cart.iterator(); ((Iterator) sc).hasNext();) {
-            StoreCart sc2 = (StoreCart) ((Iterator) sc).next();
+        for (Iterator<StoreCart> it = cookie_cart.iterator(); it.hasNext();) {
+            StoreCart sc = it.next();
             int l = 1;
             for (StoreCart sc1 : cart) {
-                if (sc1.getStore().getId().equals(sc2.getStore().getId())) {
+                if (sc1.getStore().getId().equals(sc.getStore().getId())) {
                     l = 0;
                     for (GoodsCart gc : sc.getGcs()) {
                         gc.setSc(sc1);
@@ -254,10 +254,10 @@ public class IndexViewAction {
             }
         }
         if (cart != null) {
-            for (StoreCart sc = (StoreCart) cart.iterator(); ((Iterator) sc).hasNext();) {
-                StoreCart sc2 = (StoreCart) ((Iterator) sc).next();
-                if (sc2 != null) {
-                    list.addAll(sc2.getGcs());
+            for (Iterator<StoreCart> it = cart.iterator(); it.hasNext();) {
+                StoreCart sc = it.next();
+                if (sc != null) {
+                    list.addAll(sc.getGcs());
                 }
             }
         }

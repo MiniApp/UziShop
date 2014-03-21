@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools.database;
 
 import com.iskyshop.core.tools.UnicodeReader;
@@ -30,7 +29,7 @@ public class PublicMethod {
         try {
             conn = this.dbConnectoin.getConnection();
         } catch (Exception e) {
-            throw new Exception("Êý¾ÝÁ´½Ó´íÎó,Çë¼ì²éÓÃ»§ÊäÈëµÄÐÅÏ¢!");
+            throw new Exception("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢!");
         }
         return conn;
     }

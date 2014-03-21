@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.service.impl;
 
 import com.iskyshop.core.base.GenericEntityDao;
@@ -26,6 +25,7 @@ public class QueryService implements IQueryService {
         this.geDao = geDao;
     }
 
+    @SuppressWarnings("rawtypes")
     public List query(String scope, Map params, int page, int pageSize) {
         return this.geDao.query(scope, params, page, pageSize);
     }

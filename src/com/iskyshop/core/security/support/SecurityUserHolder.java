@@ -1,16 +1,14 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.security.support;
 
-import com.iskyshop.core.tools.CommUtil;
-import com.iskyshop.foundation.domain.User;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import org.springframework.security.Authentication;
-import org.springframework.security.context.SecurityContext;
+
 import org.springframework.security.context.SecurityContextHolder;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+
+import com.iskyshop.core.tools.CommUtil;
+import com.iskyshop.foundation.domain.User;
 
 public class SecurityUserHolder {
     public static User getCurrentUser() {

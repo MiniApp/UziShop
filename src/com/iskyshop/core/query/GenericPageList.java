@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.query;
 
 import com.iskyshop.core.dao.IGenericDAO;
@@ -11,12 +10,15 @@ public class GenericPageList extends PageList {
 
     protected String scope;
 
+    @SuppressWarnings("rawtypes")
     protected Class cls;
 
+    @SuppressWarnings("rawtypes")
     public GenericPageList(Class cls, IQueryObject queryObject, IGenericDAO dao) {
         this(cls, queryObject.getQuery(), queryObject.getParameters(), dao);
     }
 
+    @SuppressWarnings("rawtypes")
     public GenericPageList(Class cls, String scope, Map paras, IGenericDAO dao) {
         this.cls = cls;
         this.scope = scope;

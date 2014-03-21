@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.query.support;
 
 import com.iskyshop.core.domain.virtual.SysMap;
@@ -8,11 +7,13 @@ import java.util.Map;
 public abstract interface IQueryObject {
     public abstract String getQuery();
 
+    @SuppressWarnings("rawtypes")
     public abstract Map getParameters();
 
     public abstract PageObject getPageObj();
 
-    public abstract IQueryObject addQuery(String paramString, Map paramMap);
+    public abstract IQueryObject addQuery(String paramString, @SuppressWarnings("rawtypes")
+    Map paramMap);
 
     public abstract IQueryObject addQuery(String paramString1, SysMap paramSysMap, String paramString2);
 

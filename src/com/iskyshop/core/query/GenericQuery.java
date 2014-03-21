@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.query;
 
 import com.iskyshop.core.dao.IGenericDAO;
@@ -7,27 +6,33 @@ import java.util.List;
 import java.util.Map;
 
 public class GenericQuery implements IQuery {
+    @SuppressWarnings("rawtypes")
     private IGenericDAO dao;
 
     private int begin;
 
     private int max;
 
+    @SuppressWarnings("rawtypes")
     private Map params;
 
+    @SuppressWarnings("rawtypes")
     public GenericQuery(IGenericDAO dao) {
         this.dao = dao;
     }
 
+    @SuppressWarnings("rawtypes")
     public List getResult(String condition) {
         return this.dao.find(condition, this.params, this.begin, this.max);
     }
 
+    @SuppressWarnings({ "rawtypes", "unused" })
     public List getResult(String condition, int begin, int max) {
         Object[] params = null;
         return this.dao.find(condition, this.params, begin, max);
     }
 
+    @SuppressWarnings({ "unused", "rawtypes" })
     public int getRows(String condition) {
         int n = condition.toLowerCase().indexOf("order by");
         Object[] params = null;
@@ -49,6 +54,7 @@ public class GenericQuery implements IQuery {
         this.max = max;
     }
 
+    @SuppressWarnings("rawtypes")
     public void setParaValues(Map params) {
         this.params = params;
     }

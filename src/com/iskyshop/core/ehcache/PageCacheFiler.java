@@ -1,21 +1,24 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.ehcache;
 
-import com.iskyshop.core.tools.CommUtil;
 import java.util.Enumeration;
+
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import net.sf.ehcache.CacheException;
 import net.sf.ehcache.constructs.blocking.LockTimeoutException;
 import net.sf.ehcache.constructs.web.AlreadyCommittedException;
 import net.sf.ehcache.constructs.web.AlreadyGzippedException;
 import net.sf.ehcache.constructs.web.filter.FilterNonReentrantException;
 import net.sf.ehcache.constructs.web.filter.SimplePageFragmentCachingFilter;
+
 import org.apache.commons.lang.StringUtils;
 
+import com.iskyshop.core.tools.CommUtil;
+
 public class PageCacheFiler extends SimplePageFragmentCachingFilter {
+    @SuppressWarnings("unused")
     private static final String FILTER_URL_PATTERNS = "patterns";
 
     private static String[] cacheURLs;
@@ -59,6 +62,7 @@ public class PageCacheFiler extends SimplePageFragmentCachingFilter {
             chain.doFilter(request, response);
     }
 
+    @SuppressWarnings("rawtypes")
     private boolean headerContains(HttpServletRequest request, String header, String value) {
         logRequestHeaders(request);
         Enumeration accepted = request.getHeaders(header);
@@ -77,6 +81,7 @@ public class PageCacheFiler extends SimplePageFragmentCachingFilter {
         return ((acceptsEncoding(request, "gzip")) || (ie6) || (ie7));
     }
 
+    @SuppressWarnings("unused")
     protected String calculateKey(HttpServletRequest httpRequest) {
         String url = httpRequest.getRequestURI();
         String include_url = CommUtil.null2String(httpRequest.getAttribute("javax.servlet.include.request_uri"));

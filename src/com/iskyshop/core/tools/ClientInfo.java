@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
 import java.util.regex.Matcher;
@@ -43,7 +42,7 @@ public class ClientInfo {
     }
 
     public String getExplorerPlug() {
-        String str = "нч";
+        String str = "О©╫О©╫";
         if (this.info.indexOf("Maxthon") != -1)
             str = "Maxthon";
         return str;

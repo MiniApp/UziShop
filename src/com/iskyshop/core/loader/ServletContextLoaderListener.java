@@ -1,15 +1,17 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.loader;
 
-import com.iskyshop.core.security.SecurityManager;
 import java.util.Map;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import org.springframework.web.context.WebApplicationContext;
+
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import com.iskyshop.core.security.SecurityManager;
+
 public class ServletContextLoaderListener implements ServletContextListener {
+    @SuppressWarnings("rawtypes")
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         ServletContext servletContext = servletContextEvent.getServletContext();
         SecurityManager securityManager = getSecurityManager(servletContext);

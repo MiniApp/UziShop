@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.dao;
 
 import java.io.Serializable;
@@ -16,16 +15,21 @@ public abstract interface IGenericDAO<T> {
 
     public abstract T getBy(String paramString, Object paramObject);
 
+    @SuppressWarnings("rawtypes")
     public abstract List executeNamedQuery(String paramString, Object[] paramArrayOfObject, int paramInt1, int paramInt2);
 
+    @SuppressWarnings("rawtypes")
     public abstract List<T> find(String paramString, Map paramMap, int paramInt1, int paramInt2);
 
+    @SuppressWarnings("rawtypes")
     public abstract List query(String paramString, Map paramMap, int paramInt1, int paramInt2);
 
     public abstract int batchUpdate(String paramString, Object[] paramArrayOfObject);
 
+    @SuppressWarnings("rawtypes")
     public abstract List executeNativeNamedQuery(String paramString);
 
+    @SuppressWarnings("rawtypes")
     public abstract List executeNativeQuery(String paramString, Object[] paramArrayOfObject, int paramInt1,
             int paramInt2);
 

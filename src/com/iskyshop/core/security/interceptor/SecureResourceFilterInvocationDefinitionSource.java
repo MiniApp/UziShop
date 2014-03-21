@@ -1,15 +1,11 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.security.interceptor;
 
-import com.iskyshop.core.tools.CommUtil;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.security.ConfigAttributeDefinition;
 import org.springframework.security.ConfigAttributeEditor;
@@ -18,6 +14,8 @@ import org.springframework.security.intercept.web.FilterInvocationDefinitionSour
 import org.springframework.security.util.AntUrlPathMatcher;
 import org.springframework.security.util.RegexUrlPathMatcher;
 import org.springframework.security.util.UrlMatcher;
+
+import com.iskyshop.core.tools.CommUtil;
 
 public class SecureResourceFilterInvocationDefinitionSource implements FilterInvocationDefinitionSource,
         InitializingBean {
@@ -53,6 +51,7 @@ public class SecureResourceFilterInvocationDefinitionSource implements FilterInv
         }
     }
 
+    @SuppressWarnings("rawtypes")
     public ConfigAttributeDefinition getAttributes(Object filter) throws IllegalArgumentException {
         FilterInvocation filterInvocation = (FilterInvocation) filter;
         String requestURI = filterInvocation.getRequestUrl();
@@ -88,14 +87,17 @@ public class SecureResourceFilterInvocationDefinitionSource implements FilterInv
         return null;
     }
 
+    @SuppressWarnings("rawtypes")
     public Collection getConfigAttributeDefinitions() {
         return null;
     }
 
+    @SuppressWarnings("rawtypes")
     public boolean supports(Class clazz) {
         return true;
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     private Map<String, String> getUrlAuthorities(FilterInvocation filterInvocation) {
         ServletContext servletContext = filterInvocation.getHttpRequest().getSession().getServletContext();
         return ((Map) servletContext.getAttribute("urlAuthorities"));

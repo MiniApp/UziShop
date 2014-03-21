@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.query;
 
 import com.iskyshop.core.query.support.IPageList;
@@ -6,6 +5,7 @@ import com.iskyshop.core.query.support.IQuery;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings("serial")
 public class PageList implements IPageList {
     private int rowCount;
 
@@ -15,6 +15,7 @@ public class PageList implements IPageList {
 
     private int pageSize;
 
+    @SuppressWarnings("rawtypes")
     private List result;
 
     private IQuery query;
@@ -30,6 +31,7 @@ public class PageList implements IPageList {
         this.query = q;
     }
 
+    @SuppressWarnings("rawtypes")
     public List getResult() {
         return this.result;
     }
@@ -38,6 +40,7 @@ public class PageList implements IPageList {
         doList(pageSize, pageNo, totalSQL, queryHQL, null);
     }
 
+    @SuppressWarnings("rawtypes")
     public void doList(int pageSize, int pageNo, String totalSQL, String queryHQL, Map params) {
         List rs = null;
         this.pageSize = pageSize;

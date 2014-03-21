@@ -1,24 +1,23 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.security.support;
 
-import com.iskyshop.core.tools.CommUtil;
-import com.iskyshop.foundation.domain.SysConfig;
-import com.iskyshop.foundation.service.ISysConfigService;
-import com.iskyshop.uc.api.UCClient;
-import com.iskyshop.uc.api.XMLHelper;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.LinkedList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.Authentication;
 import org.springframework.security.AuthenticationException;
-import org.springframework.security.AuthenticationManager;
 import org.springframework.security.providers.UsernamePasswordAuthenticationToken;
 import org.springframework.security.ui.webapp.AuthenticationProcessingFilter;
 import org.springframework.security.util.TextUtils;
+
+import com.iskyshop.core.tools.CommUtil;
+import com.iskyshop.foundation.service.ISysConfigService;
+import com.iskyshop.uc.api.UCClient;
+import com.iskyshop.uc.api.XMLHelper;
 
 public class LoginAuthenticationFilter extends AuthenticationProcessingFilter {
 
@@ -78,12 +77,14 @@ public class LoginAuthenticationFilter extends AuthenticationProcessingFilter {
         super.onSuccessfulAuthentication(request, response, authResult);
     }
 
+    @SuppressWarnings("unused")
     protected void onUnsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
             AuthenticationException failed) throws IOException {
         String uri = request.getRequestURI();
         super.onUnsuccessfulAuthentication(request, response, failed);
     }
 
+    @SuppressWarnings({ "rawtypes", "unused" })
     private static String uc_Login(String username, String pws) {
         String ucsynlogin = "";
         UCClient e = new UCClient();
@@ -97,7 +98,7 @@ public class LoginAuthenticationFilter extends AuthenticationProcessingFilter {
             if (uid > 0) {
                 ucsynlogin = e.uc_user_synlogin(uid);
             } else if (uid == -1) {
-                System.out.println("ÓÃ»§²»´æÔÚ,»òÕß±»É¾³ý");
+                System.out.println("ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ß±ï¿½É¾ï¿½ï¿½");
             }
 
         }

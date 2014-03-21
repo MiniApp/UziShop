@@ -1,14 +1,14 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.query;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.springframework.web.servlet.ModelAndView;
 
 import com.iskyshop.core.domain.virtual.SysMap;
 import com.iskyshop.core.query.support.IQueryObject;
 import com.iskyshop.core.tools.CommUtil;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import org.springframework.web.servlet.ModelAndView;
 
 public class QueryObject implements IQueryObject {
     protected Integer pageSize = Integer.valueOf(12);
@@ -19,6 +19,7 @@ public class QueryObject implements IQueryObject {
 
     protected String orderType;
 
+    @SuppressWarnings("rawtypes")
     protected Map params = new HashMap();
 
     protected String queryString = "1=1";
@@ -39,6 +40,7 @@ public class QueryObject implements IQueryObject {
         this.pageSize = pageSize;
     }
 
+    @SuppressWarnings("rawtypes")
     protected void setParams(Map params) {
         this.params = params;
     }
@@ -118,10 +120,12 @@ public class QueryObject implements IQueryObject {
         return orderString;
     }
 
+    @SuppressWarnings("rawtypes")
     public Map getParameters() {
         return this.params;
     }
 
+    @SuppressWarnings("unchecked")
     public IQueryObject addQuery(String field, SysMap para, String expression) {
         if ((field != null) && (para != null)) {
             QueryObject tmp9_8 = this;
@@ -132,6 +136,7 @@ public class QueryObject implements IQueryObject {
         return this;
     }
 
+    @SuppressWarnings("unchecked")
     public IQueryObject addQuery(String field, SysMap para, String expression, String logic) {
         if ((field != null) && (para != null)) {
             QueryObject tmp9_8 = this;
@@ -142,6 +147,7 @@ public class QueryObject implements IQueryObject {
         return this;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public IQueryObject addQuery(String scope, Map paras) {
         if (scope != null) {
             if ((scope.trim().indexOf("and") == 0) || (scope.trim().indexOf("or") == 0)) {
@@ -161,6 +167,7 @@ public class QueryObject implements IQueryObject {
         return this;
     }
 
+    @SuppressWarnings("unchecked")
     public IQueryObject addQuery(String para, Object obj, String field, String expression) {
         if ((field != null) && (para != null)) {
             QueryObject tmp9_8 = this;
@@ -170,6 +177,7 @@ public class QueryObject implements IQueryObject {
         return this;
     }
 
+    @SuppressWarnings("unchecked")
     public IQueryObject addQuery(String para, Object obj, String field, String expression, String logic) {
         if ((field != null) && (para != null)) {
             QueryObject tmp9_8 = this;

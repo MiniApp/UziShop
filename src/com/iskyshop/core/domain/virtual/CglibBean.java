@@ -1,9 +1,9 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.domain.virtual;
 
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
 import net.sf.cglib.beans.BeanGenerator;
 import net.sf.cglib.beans.BeanMap;
 
@@ -12,11 +12,13 @@ public class CglibBean {
 
     public BeanMap beanMap = null;
 
+    @SuppressWarnings({ "unused", "rawtypes" })
     private Map propertyMap;
 
     public CglibBean() {
     }
 
+    @SuppressWarnings("rawtypes")
     public CglibBean(Map propertyMap) {
         this.object = generateBean(propertyMap);
         this.beanMap = BeanMap.create(this.object);
@@ -38,6 +40,7 @@ public class CglibBean {
         return this.object;
     }
 
+    @SuppressWarnings("rawtypes")
     private Object generateBean(Map propertyMap) {
         BeanGenerator generator = new BeanGenerator();
         Set keySet = propertyMap.keySet();

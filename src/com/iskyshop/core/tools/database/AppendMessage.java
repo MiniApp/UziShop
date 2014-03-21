@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools.database;
 
 import java.text.SimpleDateFormat;
@@ -11,7 +10,7 @@ public class AppendMessage {
             SimpleDateFormat smf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             strBuilder = new StringBuilder();
             strBuilder.append("/*\n").append("Data Transfer\n").append("Author: ISkyShop\n")
-                    .append("company:沈阳网之商科技有限公司\n").append("Date: " + smf.format(new Date()) + "\n").append("*/\n");
+                    .append("company:娌堥槼缃戜箣鍟嗙鎶�鏈夐檺鍏徃\n").append("Date: " + smf.format(new Date()) + "\n").append("*/\n");
         } catch (Exception e) {
             throw e;
         }

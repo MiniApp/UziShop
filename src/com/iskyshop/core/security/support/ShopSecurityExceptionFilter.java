@@ -1,15 +1,14 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.security.support;
 
 import java.io.IOException;
+
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import org.apache.commons.logging.Log;
+
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.security.AccessDeniedException;
 import org.springframework.security.AuthenticationException;
@@ -17,7 +16,6 @@ import org.springframework.security.AuthenticationTrustResolver;
 import org.springframework.security.AuthenticationTrustResolverImpl;
 import org.springframework.security.InsufficientAuthenticationException;
 import org.springframework.security.SpringSecurityException;
-import org.springframework.security.context.SecurityContext;
 import org.springframework.security.context.SecurityContextHolder;
 import org.springframework.security.ui.AccessDeniedHandler;
 import org.springframework.security.ui.AuthenticationEntryPoint;

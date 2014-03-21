@@ -1,18 +1,12 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.security.support;
 
-import com.iskyshop.core.security.SecurityManager;
-import com.iskyshop.foundation.domain.Res;
-import com.iskyshop.foundation.domain.Role;
-import com.iskyshop.foundation.domain.User;
-import com.iskyshop.foundation.service.IResService;
-import com.iskyshop.foundation.service.IUserService;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.GrantedAuthority;
@@ -20,6 +14,13 @@ import org.springframework.security.GrantedAuthorityImpl;
 import org.springframework.security.userdetails.UserDetails;
 import org.springframework.security.userdetails.UserDetailsService;
 import org.springframework.security.userdetails.UsernameNotFoundException;
+
+import com.iskyshop.core.security.SecurityManager;
+import com.iskyshop.foundation.domain.Res;
+import com.iskyshop.foundation.domain.Role;
+import com.iskyshop.foundation.domain.User;
+import com.iskyshop.foundation.service.IResService;
+import com.iskyshop.foundation.service.IUserService;
 
 public class SecurityManagerSupport implements UserDetailsService, SecurityManager {
 
@@ -29,6 +30,7 @@ public class SecurityManagerSupport implements UserDetailsService, SecurityManag
     @Autowired
     private IResService resService;
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public UserDetails loadUserByUsername(String data) throws UsernameNotFoundException, DataAccessException {
         String[] list = data.split(",");
         String userName = list[0];
@@ -63,11 +65,13 @@ public class SecurityManagerSupport implements UserDetailsService, SecurityManag
         return user;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public Map<String, String> loadUrlAuthorities() {
         Map urlAuthorities = new HashMap();
         Map params = new HashMap();
         params.put("type", "URL");
-        List<Res> urlResources = this.resService.query("select obj from Res obj where obj.type = :type", params, -1, -1);
+        List<Res> urlResources = this.resService
+                .query("select obj from Res obj where obj.type = :type", params, -1, -1);
         for (Res res : urlResources) {
             urlAuthorities.put(res.getValue(), res.getRoleAuthorities());
         }
