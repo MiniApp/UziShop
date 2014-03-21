@@ -26,7 +26,7 @@ public class StoreCart extends IdEntity {
     private Store store;
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sc", cascade=CascadeType.MERGE)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sc"/*, cascade=CascadeType.MERGE*/)
     private List<GoodsCart> gcs = new ArrayList();
 
     private BigDecimal total_price;

@@ -288,7 +288,8 @@ public class CartViewAction
     return mv;
   }
 
-  @RequestMapping({"/add_goods_cart.htm"})
+  @SuppressWarnings("rawtypes")
+@RequestMapping({"/add_goods_cart.htm"})
   public void add_goods_cart(HttpServletRequest request, HttpServletResponse response, String id, String count, String price, String gsp, String buy_type)
   {
     String cart_session_id = "";
@@ -378,6 +379,7 @@ public class CartViewAction
       for (StoreCart sc1 : cart) {
         if (sc1.getStore().getId().equals(sc2.getStore().getId())) {
           k = 0;
+          cart.add(sc1);
         }
       }
       if (k != 0) {

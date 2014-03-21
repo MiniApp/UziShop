@@ -71,7 +71,7 @@ public class Goods extends IdEntity {
     @Column(columnDefinition = "int default 0")
     private int goods_collect;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Store goods_store;
 
     private int goods_status;
