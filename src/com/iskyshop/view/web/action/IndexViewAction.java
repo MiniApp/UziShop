@@ -1,5 +1,4 @@
-﻿/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
-package com.iskyshop.view.web.action;
+﻿package com.iskyshop.view.web.action;
 
 import com.iskyshop.core.mv.JModelAndView;
 import com.iskyshop.core.security.support.SecurityUserHolder;
@@ -157,7 +156,7 @@ public class IndexViewAction {
         mv.addObject("msgs", msgs);
         List<GoodsCart> list = new ArrayList();
         List<StoreCart> cart = new ArrayList();
-        List user_cart = new ArrayList();
+        List<StoreCart> user_cart = new ArrayList();
         List<StoreCart> cookie_cart = new ArrayList();
         User user = null;
         if (SecurityUserHolder.getCurrentUser() != null) {
@@ -225,16 +224,17 @@ public class IndexViewAction {
                             params, -1, -1);
         }
 
-        for (Object sc = user_cart.iterator(); ((Iterator) sc).hasNext();) {
-            StoreCart sc2 = (StoreCart) ((Iterator) sc).next();
+        //suhao for (StoreCart sc = user_cart.iterator(); ((Iterator) sc).hasNext();) {
+        for (Iterator<StoreCart> it = user_cart.iterator(); it.hasNext();) {
+            StoreCart sc = it.next();
             int k = 1;
             for (StoreCart sc1 : cart) {
-                if (sc1.getStore().getId().equals(sc2.getStore().getId())) {
+                if (sc1.getStore().getId().equals(sc.getStore().getId())) {
                     k = 0;
                 }
             }
             if (k != 0)
-                cart.add((StoreCart) sc);
+                cart.add(sc);
         }
         for (Iterator<StoreCart> it = cookie_cart.iterator(); it.hasNext();) {
             StoreCart sc = it.next();
@@ -257,7 +257,11 @@ public class IndexViewAction {
             for (Iterator<StoreCart> it = cart.iterator(); it.hasNext();) {
                 StoreCart sc = it.next();
                 if (sc != null) {
-                    list.addAll(sc.getGcs());
+                    //list.addAll(sc.getGcs());
+                    for (Iterator<GoodsCart> its = sc.getGcs().iterator(); its.hasNext();) {
+                        GoodsCart gc = its.next();
+                        list.add(gc);
+                    }
                 }
             }
         }

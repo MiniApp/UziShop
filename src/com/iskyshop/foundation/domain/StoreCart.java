@@ -1,17 +1,21 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
-import com.iskyshop.core.domain.IdEntity;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import com.iskyshop.core.domain.IdEntity;
 
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Entity
@@ -21,7 +25,8 @@ public class StoreCart extends IdEntity {
     @ManyToOne
     private Store store;
 
-    @OneToMany(mappedBy = "sc")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sc", cascade=CascadeType.MERGE)
     private List<GoodsCart> gcs = new ArrayList();
 
     private BigDecimal total_price;

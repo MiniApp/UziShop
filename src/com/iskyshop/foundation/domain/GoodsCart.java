@@ -1,10 +1,11 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -32,7 +33,7 @@ public class GoodsCart extends IdEntity {
 
     @ManyToMany
     @JoinTable(name = "iskyshop_cart_gsp", joinColumns = { @javax.persistence.JoinColumn(name = "cart_id") }, inverseJoinColumns = { @javax.persistence.JoinColumn(name = "gsp_id") })
-    private List<GoodsSpecProperty> gsps = new ArrayList();
+    private List<GoodsSpecProperty> gsps = new ArrayList<GoodsSpecProperty>();
 
     @Lob
     @Column(columnDefinition = "LongText")
