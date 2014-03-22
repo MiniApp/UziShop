@@ -721,7 +721,7 @@ public class CartViewAction {
 		for (Iterator<StoreCart> it = cart.iterator(); it.hasNext();) {
 			sc = it.next();
 
-			if (sc.getStore().getId().equals(CommUtil.null2Long(store_id))) {
+			if (sc.getStore() != null && sc.getStore().getId().equals(CommUtil.null2Long(store_id))) {
 				((Map) map)
 						.put("sc_total_price", Float.valueOf(CommUtil
 								.null2Float(sc.getTotal_price())));
