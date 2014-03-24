@@ -1,7 +1,6 @@
 package com.iskyshop.core.tools;
 
 import java.io.File;
-import java.io.PrintStream;
 import java.text.Collator;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -121,7 +120,8 @@ public class FileSorter implements Comparator<File> {
         return ((s1 > s2) ? 1 : -1);
     }
 
-    private int compareByName(File object1, File object2) {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	private int compareByName(File object1, File object2) {
         Comparator cmp = Collator.getInstance(Locale.CHINA);
 
         return cmp.compare(object1.getName(), object2.getName());
