@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
 import java.io.File;
@@ -146,10 +145,10 @@ public class FileSorter implements Comparator<File> {
     }
 
     private static void printFileArray(File[] list) {
-        System.out.println("ÎÄ¼þ´óÐ¡\t\tÎÄ¼þÐÞ¸ÄÈÕÆÚ\t\tÎÄ¼þÀàÐÍ\t\tÎÄ¼þÃû³Æ");
+        System.out.println("ï¿½Ä¼ï¿½ï¿½ï¿½Ð¡\t\tï¿½Ä¼ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½\t\tï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½\t\tï¿½Ä¼ï¿½ï¿½ï¿½ï¿½");
 
         for (File f : list)
             System.out.println(f.length() + "\t\t" + new Date(f.lastModified()).toString() + "\t\t"
-                    + ((f.isDirectory()) ? "Ä¿Â¼" : "ÎÄ¼þ") + "\t\t" + f.getName());
+                    + ((f.isDirectory()) ? "Ä¿Â¼" : "ï¿½Ä¼ï¿½") + "\t\t" + f.getName());
     }
 }
