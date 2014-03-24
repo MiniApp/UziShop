@@ -22,8 +22,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 public class ExcelUnit {
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-	public static void exportExcel(String title, String[] headers, Collection<T> dataset, OutputStream out,
+    public static void exportExcel(String title, String[] headers, Collection<T> dataset, OutputStream out,
             String pattern) {
         HSSFWorkbook workbook = new HSSFWorkbook();
 
@@ -150,8 +149,7 @@ public class ExcelUnit {
         }
     }
 
-    @SuppressWarnings("rawtypes")
-	public static void exportTable2Excel(String title, String[] headers, Collection dataset, OutputStream out,
+    public static void exportTable2Excel(String title, String[] headers, Collection dataset, OutputStream out,
             String pattern) {
         HSSFWorkbook workbook = new HSSFWorkbook();
 

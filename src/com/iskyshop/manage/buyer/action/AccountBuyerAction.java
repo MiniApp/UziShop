@@ -1,4 +1,5 @@
-﻿package com.iskyshop.manage.buyer.action;
+﻿/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
+package com.iskyshop.manage.buyer.action;
 
 import com.iskyshop.core.annotation.SecurityMapping;
 import com.iskyshop.core.domain.virtual.SysMap;
