@@ -2,9 +2,9 @@
 <project-module
   type="WEB"
   name="SkyShop"
-  id="myeclipse.1394780392748"
+  id="myeclipse.1395540955711"
   context-root="/iskyshop"
-  j2ee-spec="5.0"
+  j2ee-spec="6.0"
   archive="SkyShop.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />

@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
 import java.io.OutputStream;
@@ -23,7 +22,8 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 public class ExcelUnit {
-    public static void exportExcel(String title, String[] headers, Collection<T> dataset, OutputStream out,
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public static void exportExcel(String title, String[] headers, Collection<T> dataset, OutputStream out,
             String pattern) {
         HSSFWorkbook workbook = new HSSFWorkbook();
 
@@ -150,7 +150,8 @@ public class ExcelUnit {
         }
     }
 
-    public static void exportTable2Excel(String title, String[] headers, Collection dataset, OutputStream out,
+    @SuppressWarnings("rawtypes")
+	public static void exportTable2Excel(String title, String[] headers, Collection dataset, OutputStream out,
             String pattern) {
         HSSFWorkbook workbook = new HSSFWorkbook();
 
