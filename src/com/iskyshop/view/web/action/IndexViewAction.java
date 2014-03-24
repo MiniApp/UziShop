@@ -237,7 +237,7 @@ public class IndexViewAction {
 			StoreCart sc = it.next();
 			int k = 1;
 			for (StoreCart sc1 : cart) {
-				if (sc1.getStore().getId().equals(sc.getStore().getId())) {
+				if (sc1.getStore() != null && sc1.getStore().getId().equals(sc.getStore().getId())) {
 					k = 0;
 				}
 			}

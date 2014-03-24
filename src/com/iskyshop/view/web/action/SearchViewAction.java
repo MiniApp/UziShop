@@ -1,5 +1,4 @@
-﻿/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
-package com.iskyshop.view.web.action;
+﻿package com.iskyshop.view.web.action;
 
 import com.iskyshop.core.domain.virtual.SysMap;
 import com.iskyshop.core.mv.JModelAndView;
@@ -154,7 +153,7 @@ public class SearchViewAction {
         if ((type.equals("goods")) && (!(CommUtil.null2String(keyword).equals("")))) {
             String path = System.getProperty("user.dir") + File.separator + "luence" + File.separator + "goods";
             LuceneUtil lucene = LuceneUtil.instance();
-            LuceneUtil.setIndex_path(path);
+            lucene.setIndex_path(path);
             boolean order_type = true;
             String order_by = "";
             if (CommUtil.null2String(orderType).equals("asc")) {

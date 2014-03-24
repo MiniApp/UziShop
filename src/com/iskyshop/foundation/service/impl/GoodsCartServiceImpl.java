@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.service.impl;
 
 import com.iskyshop.core.dao.IGenericDAO;
@@ -57,6 +56,7 @@ public class GoodsCartServiceImpl implements IGoodsCartService {
         return true;
     }
 
+    @SuppressWarnings({ "rawtypes", "unused" })
     public IPageList list(IQueryObject properties) {
         if (properties == null) {
             return null;
@@ -85,6 +85,7 @@ public class GoodsCartServiceImpl implements IGoodsCartService {
         return false;
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public List<GoodsCart> query(String query, Map params, int begin, int max) {
         return this.goodsCartDao.query(query, params, begin, max);
     }

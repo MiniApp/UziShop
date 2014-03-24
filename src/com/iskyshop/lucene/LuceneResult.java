@@ -5,69 +5,77 @@ import com.iskyshop.foundation.domain.Store;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LuceneResult
-{
-  private List<LuceneVo> vo_list = new ArrayList();
-  private int pages;
-  private int rows;
-  private int currentPage;
-  private int pageSize;
-  private List<Goods> goods_list = new ArrayList();
-  private List<Store> store_list = new ArrayList();
+public class LuceneResult {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    private List<LuceneVo> vo_list = new ArrayList();
 
-  public int getPages() {
-    return this.pages;
-  }
+    private int pages;
 
-  public void setPages(int pages) {
-    this.pages = pages;
-  }
+    private int rows;
 
-  public int getRows() {
-    return this.rows;
-  }
+    private int currentPage;
 
-  public void setRows(int rows) {
-    this.rows = rows;
-  }
+    private int pageSize;
 
-  public int getCurrentPage() {
-    return this.currentPage;
-  }
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    private List<Goods> goods_list = new ArrayList();
 
-  public void setCurrentPage(int currentPage) {
-    this.currentPage = currentPage;
-  }
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    private List<Store> store_list = new ArrayList();
 
-  public int getPageSize() {
-    return this.pageSize;
-  }
+    public int getPages() {
+        return this.pages;
+    }
 
-  public void setPageSize(int pageSize) {
-    this.pageSize = pageSize;
-  }
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
 
-  public List<LuceneVo> getVo_list() {
-    return this.vo_list;
-  }
+    public int getRows() {
+        return this.rows;
+    }
 
-  public void setVo_list(List<LuceneVo> vo_list) {
-    this.vo_list = vo_list;
-  }
+    public void setRows(int rows) {
+        this.rows = rows;
+    }
 
-  public List<Goods> getGoods_list() {
-    return this.goods_list;
-  }
+    public int getCurrentPage() {
+        return this.currentPage;
+    }
 
-  public void setGoods_list(List<Goods> goods_list) {
-    this.goods_list = goods_list;
-  }
+    public void setCurrentPage(int currentPage) {
+        this.currentPage = currentPage;
+    }
 
-  public List<Store> getStore_list() {
-    return this.store_list;
-  }
+    public int getPageSize() {
+        return this.pageSize;
+    }
 
-  public void setStore_list(List<Store> store_list) {
-    this.store_list = store_list;
-  }
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public List<LuceneVo> getVo_list() {
+        return this.vo_list;
+    }
+
+    public void setVo_list(List<LuceneVo> vo_list) {
+        this.vo_list = vo_list;
+    }
+
+    public List<Goods> getGoods_list() {
+        return this.goods_list;
+    }
+
+    public void setGoods_list(List<Goods> goods_list) {
+        this.goods_list = goods_list;
+    }
+
+    public List<Store> getStore_list() {
+        return this.store_list;
+    }
+
+    public void setStore_list(List<Store> store_list) {
+        this.store_list = store_list;
+    }
 }

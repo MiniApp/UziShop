@@ -148,7 +148,7 @@ public class ReportManageAction
         CommUtil.createFolder(goods_lucene_path);
       }
       LuceneUtil lucene = LuceneUtil.instance();
-      LuceneUtil.setIndex_path(goods_lucene_path);
+      lucene.setIndex_path(goods_lucene_path);
       lucene.delete_index(CommUtil.null2String(goods.getId()));
     }
     if (obj.getResult() == -2) {

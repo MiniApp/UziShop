@@ -1,14 +1,11 @@
-﻿/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
-package com.iskyshop.lucene;
+﻿package com.iskyshop.lucene;
 
-import java.io.PrintStream;
 import java.util.Date;
-import java.util.List;
 
 public class SearchTest {
     public static void main(String[] args) {
         LuceneUtil lucence = LuceneUtil.instance();
-        LuceneUtil.setIndex_path("F:\\JAVA_PRO\\iskyshop\\luence\\goods");
+        lucence.setIndex_path("F:\\JAVA_PRO\\iskyshop\\luence\\goods");
         Date d1 = new Date();
         LuceneResult list = lucence.search("手提包", 0, 0.0D, 500.0D, null, null);
         Date d2 = new Date();

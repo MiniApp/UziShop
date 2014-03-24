@@ -36,7 +36,8 @@
 		  #end
 		 #end
 		function cart_remove(id,store_id){
-           jQuery.post("$!store_second_url/remove_goods_cart.htm",{"id":id,"store_id":store_id},function(data){
+           //jQuery.post("$!store_second_url/remove_goods_cart.htm",{"id":id,"store_id":store_id},function(data){
+           jQuery.post("$!webPath/remove_goods_cart.htm",{"id":id,"store_id":store_id},function(data){
            jQuery("div[class=table] tr[id="+id+"]").remove();
 		   jQuery(".shopping[id="+id+"]").remove();
 		   jQuery(".shopp_ingtop[id="+id+"]").remove();
@@ -56,7 +57,8 @@
        }
 	    jQuery(document).ready(function(){
 		   jQuery("#cart_goods_top_menu").mouseover(function(){
-			  jQuery.ajax({type:'POST',url:'$!store_second_url/cart_menu_detail.htm',data:'',
+			  jQuery.ajax({//type:'POST',url:'$!store_second_url/cart_menu_detail.htm',data:'',
+			  			   type:'POST',url:'$!webPath/cart_menu_detail.htm',data:'',
 						   beforeSend:function(){
 							     jQuery("#cart_goods_top_info").empty().html('<div class="menu-bd-panel"><div style="text-align:center;"><img src="$!webPath/resources/style/common/images/loader.gif" /></div></div>');
 							     jQuery("#cart_goods_top_info").show();

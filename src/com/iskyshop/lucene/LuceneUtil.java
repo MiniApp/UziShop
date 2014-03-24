@@ -1,23 +1,19 @@
 ﻿package com.iskyshop.lucene;
 
-import com.iskyshop.core.tools.CommUtil;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.Field.Index;
-import org.apache.lucene.document.Field.Store;
 import org.apache.lucene.document.NumericField;
 import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
@@ -37,13 +33,15 @@ import org.jsoup.safety.Whitelist;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 import org.wltea.analyzer.lucene.IKSimilarity;
 
+import com.iskyshop.core.tools.CommUtil;
+
 public class LuceneUtil
 {
   private static File index_file = null;
   private static Analyzer analyzer = null;
   private static LuceneUtil lucence = new LuceneUtil();
   private static QueryParser parser;
-  private static String index_path;
+  private String index_path;
   private int textmaxlength = 2000;
   private static String prefixHTML = "<font color='red'>";
   private static String suffixHTML = "</font>";
@@ -61,11 +59,12 @@ public class LuceneUtil
     return lucence;
   }
 
-  public static void setIndex_path(String index_path) {
-    index_path = index_path;
+  public void setIndex_path(String index_path) {
+    this.index_path = index_path;
   }
 
-  public List<LuceneVo> searchIndex(String keyword, int start, int size, double begin_price, double end_price, Sort sort)
+  @SuppressWarnings({ "rawtypes", "unchecked" })
+public List<LuceneVo> searchIndex(String keyword, int start, int size, double begin_price, double end_price, Sort sort)
     throws IOException
   {
     IndexSearcher searcher = null;
@@ -134,7 +133,8 @@ public class LuceneUtil
     return list;
   }
 
-  public LuceneResult search(String params, int pageNo, double begin_price, double end_price, ScoreDoc after, Sort sort)
+  @SuppressWarnings({ "unused", "rawtypes", "unchecked" })
+public LuceneResult search(String params, int pageNo, double begin_price, double end_price, ScoreDoc after, Sort sort)
   {
     LuceneResult pList = new LuceneResult();
     IndexSearcher isearcher = null;
@@ -197,7 +197,8 @@ public class LuceneUtil
     return pList;
   }
 
-  public void writeIndex(List<LuceneVo> list, String index_path)
+  @SuppressWarnings("deprecation")
+public void writeIndex(List<LuceneVo> list, String index_path)
     throws IOException
   {
     IndexWriter writer = openIndexWriter(index_path);
@@ -212,7 +213,8 @@ public class LuceneUtil
     }
   }
 
-  public void writeIndex(LuceneVo vo, String index_path)
+  @SuppressWarnings("deprecation")
+public void writeIndex(LuceneVo vo, String index_path)
   {
     IndexWriter writer = null;
     try {
@@ -328,7 +330,8 @@ public class LuceneUtil
       files[i].delete();
   }
 
-  private IndexWriter openIndexWriter(String index_path) throws IOException
+  @SuppressWarnings("deprecation")
+private IndexWriter openIndexWriter(String index_path) throws IOException
   {
     IndexWriterConfig indexWriterConfig = new IndexWriterConfig(
       Version.LUCENE_35, analyzer);
@@ -341,7 +344,8 @@ public class LuceneUtil
     return writer;
   }
 
-  private Document builderDocument(LuceneVo luceneVo)
+  @SuppressWarnings("unused")
+private Document builderDocument(LuceneVo luceneVo)
   {
     Document document = new Document();
     Whitelist white = new Whitelist();
@@ -378,7 +382,7 @@ public class LuceneUtil
   public static void main(String[] args)
   {
     LuceneUtil lucence = instance();
-    setIndex_path("E:\\apache-tomcat-7.0.42\\luence\\goods");
+    lucence.setIndex_path("E:\\apache-tomcat-7.0.42\\luence\\goods");
     Date d1 = new Date();
     LuceneResult list = lucence.search("专柜正品黑色时尚冬装男", 0, 0.0D, 500.0D, null, null);
     Date d2 = new Date();

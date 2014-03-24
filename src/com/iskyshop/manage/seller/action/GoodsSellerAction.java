@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.manage.seller.action;
 
 import com.iskyshop.core.annotation.SecurityMapping;
@@ -739,7 +738,7 @@ public class GoodsSellerAction {
                 vo.setVo_add_time(goods.getAddTime().getTime());
                 vo.setVo_goods_salenum(goods.getGoods_salenum());
                 LuceneUtil lucene = LuceneUtil.instance();
-                LuceneUtil.setIndex_path(goods_lucene_path);
+                lucene.setIndex_path(goods_lucene_path);
                 lucene.update(CommUtil.null2String(goods.getId()), vo);
             }
             mv.addObject("obj", goods);
@@ -1105,7 +1104,7 @@ public class GoodsSellerAction {
                         vo.setVo_add_time(goods.getAddTime().getTime());
                         vo.setVo_goods_salenum(goods.getGoods_salenum());
                         LuceneUtil lucene = LuceneUtil.instance();
-                        LuceneUtil.setIndex_path(goods_lucene_path);
+                        lucene.setIndex_path(goods_lucene_path);
                         lucene.update(CommUtil.null2String(goods.getId()), vo);
                     } else {
                         String goods_lucene_path = System.getProperty("user.dir") + File.separator + "luence"
@@ -1172,7 +1171,7 @@ public class GoodsSellerAction {
                         CommUtil.createFolder(goods_lucene_path);
                     }
                     LuceneUtil lucene = LuceneUtil.instance();
-                    LuceneUtil.setIndex_path(goods_lucene_path);
+                    lucene.setIndex_path(goods_lucene_path);
                     lucene.delete_index(CommUtil.null2String(id));
                 }
             }
