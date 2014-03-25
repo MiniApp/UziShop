@@ -1,6 +1,5 @@
 package com.iskyshop.foundation.domain;
 
-import com.iskyshop.core.domain.IdEntity;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +14,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.Cascade;
+
+import com.iskyshop.core.domain.IdEntity;
 
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Entity
@@ -45,7 +46,7 @@ public class GoodsCart extends IdEntity {
 
     private String cart_type;
 
-    @ManyToOne(cascade=(CascadeType.ALL))
+    @ManyToOne(cascade=(CascadeType.MERGE))
     private StoreCart sc;
 
     public StoreCart getSc() {

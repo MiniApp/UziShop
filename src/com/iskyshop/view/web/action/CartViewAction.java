@@ -350,7 +350,7 @@ public class CartViewAction {
                         params, -1, -1);
             }
 
-        } else if (!(cart_session_id.equals(""))) {
+        } else if (cart_session_id.equals("")) {
             params.clear();
             params.put("cart_session_id", cart_session_id);
             params.put("sc_status", Integer.valueOf(0));
@@ -360,7 +360,7 @@ public class CartViewAction {
         }
 
         for (StoreCart sc2 : user_cart) {
-            int k = 1;
+            /*suhao int k = 1;
             for (StoreCart sc1 : cart) {
                 if (sc1.getStore() != null && sc1.getStore().getId().equals(sc2.getStore().getId())) {
                     k = 0;
@@ -369,10 +369,19 @@ public class CartViewAction {
             }
             if (k != 0) {
                 cart.add(sc2);
+            }*/
+            boolean sc_add = true;
+            for (StoreCart sc1 : cart) {
+              if (sc1.getStore() != null && sc1.getStore().getId().equals(sc2.getStore().getId())) {
+                sc_add = false;
+              }
+            }
+            if (sc_add) {
+              cart.add(sc2);
             }
         }
         for (StoreCart sc3 : cookie_cart) {
-            int l = 1;
+            /*suhao int l = 1;
             for (StoreCart sc1 : cart) {
                 if (sc1.getStore() != null && sc1.getStore().getId().equals(sc3.getStore().getId())) {
                     l = 0;
@@ -385,6 +394,20 @@ public class CartViewAction {
             }
             if (l != 0) {
                 cart.add(sc3);
+            }*/
+            boolean sc_add = true;
+            for (StoreCart sc1 : cart) {
+              if (sc1.getStore() != null && sc1.getStore().getId().equals(sc3.getStore().getId())) {
+                sc_add = false;
+                for (GoodsCart gc : sc3.getGcs()) {
+                  gc.setSc(sc1);
+                  this.goodsCartService.update(gc);
+                }
+                this.storeCartService.delete(sc1.getId());
+              }
+            }
+            if (sc_add) {
+              cart.add(sc3);
             }
         }
 
@@ -424,6 +447,7 @@ public class CartViewAction {
             sc3.setStore(goods.getGoods_store());
             if (((String) type).equals("save")) {
                 sc3.setAddTime(new Date());
+                type = "update";
                 this.storeCartService.save(sc3);
             } else {
                 this.storeCartService.update(sc3);
@@ -478,7 +502,8 @@ public class CartViewAction {
                 sc.setAddTime(new Date());
                 this.storeCartService.save(sc);
             } else {
-                this.storeCartService.update(sc);
+                sc3  = sc;
+                this.storeCartService.update(sc3);
             }
             int i4 = 1;
             for (StoreCart sc1 : cart) {
