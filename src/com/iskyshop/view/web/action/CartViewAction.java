@@ -448,6 +448,7 @@ public class CartViewAction {
             if (((String) type).equals("save")) {
                 sc3.setAddTime(new Date());
                 type = "update";
+                sc = sc3;
                 this.storeCartService.save(sc3);
             } else {
                 this.storeCartService.update(sc3);
@@ -502,8 +503,8 @@ public class CartViewAction {
                 sc.setAddTime(new Date());
                 this.storeCartService.save(sc);
             } else {
-                sc3  = sc;
-                this.storeCartService.update(sc3);
+            	StoreCart sctmp = sc;
+                this.storeCartService.update(sctmp);
             }
             int i4 = 1;
             for (StoreCart sc1 : cart) {

@@ -46,7 +46,7 @@ public class GoodsCart extends IdEntity {
 
     private String cart_type;
 
-    @ManyToOne(cascade=(CascadeType.MERGE))
+    @ManyToOne(cascade=(CascadeType.ALL))
     private StoreCart sc;
 
     public StoreCart getSc() {
