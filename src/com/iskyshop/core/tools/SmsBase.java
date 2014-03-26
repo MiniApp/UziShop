@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
 import java.io.BufferedReader;
@@ -23,6 +22,7 @@ public class SmsBase {
         this.pwd = pwd;
     }
 
+    @SuppressWarnings("unused")
     public String SendSms(String mobile, String content) throws UnsupportedEncodingException {
         Integer x_ac = Integer.valueOf(10);
         HttpURLConnection httpconn = null;

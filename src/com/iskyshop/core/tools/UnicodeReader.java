@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
 import java.io.File;
@@ -15,6 +14,7 @@ public class UnicodeReader extends Reader {
 
     private String encoding;
 
+    @SuppressWarnings("unused")
     private static final int BOM_SIZE = 4;
 
     public UnicodeReader(String file) throws IOException, FileNotFoundException, SecurityException {

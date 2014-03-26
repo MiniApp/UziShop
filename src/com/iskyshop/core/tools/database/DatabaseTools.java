@@ -1,10 +1,8 @@
 package com.iskyshop.core.tools.database;
 
-import com.iskyshop.core.tools.CommUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -14,10 +12,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import com.iskyshop.core.tools.CommUtil;
 
 @Repository
 public class DatabaseTools implements IBackup {
@@ -25,6 +26,7 @@ public class DatabaseTools implements IBackup {
     @Autowired
     private PublicMethod publicMethod;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public boolean createSqlScript(HttpServletRequest request, String path, String name, String size, String tables)
             throws Exception {
         int count = 1;
@@ -126,6 +128,7 @@ public class DatabaseTools implements IBackup {
         return ret;
     }
 
+    @SuppressWarnings("unused")
     public boolean executSqlScript(String filePath) throws Exception {
         Connection conn = null;
         Statement stmt = null;
@@ -167,6 +170,7 @@ public class DatabaseTools implements IBackup {
         return ret;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked", "unused" })
     public List<String> getAllDatas(String tableName) throws Exception {
         List list = new ArrayList();
         StringBuilder typeStr = null;
@@ -234,6 +238,7 @@ public class DatabaseTools implements IBackup {
         return list;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked", "unused" })
     public List<Vector<Object>> getAllDatas1(String tableName) throws Exception {
         StringBuilder typeStr = null;
         List list = new ArrayList();
@@ -295,6 +300,7 @@ public class DatabaseTools implements IBackup {
         return list;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public List<String> getTables() throws Exception {
         List tables = new ArrayList();
         Connection conn = null;
@@ -342,6 +348,7 @@ public class DatabaseTools implements IBackup {
         return ret;
     }
 
+    @SuppressWarnings("rawtypes")
     public boolean export(String tables, String path) {
         boolean ret = true;
         try {
@@ -369,6 +376,7 @@ public class DatabaseTools implements IBackup {
         return ret;
     }
 
+    @SuppressWarnings("unused")
     public ResultSet query(String sql) {
         Connection conn = null;
         ResultSet rs = null;

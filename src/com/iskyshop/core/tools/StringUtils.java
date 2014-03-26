@@ -13,14 +13,19 @@ import java.util.StringTokenizer;
 import java.util.TreeSet;
 
 public abstract class StringUtils {
+    @SuppressWarnings("unused")
     private static final String FOLDER_SEPARATOR = "/";
 
+    @SuppressWarnings("unused")
     private static final String WINDOWS_FOLDER_SEPARATOR = "\\";
 
+    @SuppressWarnings("unused")
     private static final String TOP_PATH = "..";
 
+    @SuppressWarnings("unused")
     private static final String CURRENT_PATH = ".";
 
+    @SuppressWarnings("unused")
     private static final char EXTENSION_SEPARATOR = 46;
 
     public static String[] addStringToArray(String[] array, String str) {
@@ -76,6 +81,7 @@ public abstract class StringUtils {
         return buf.toString();
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static String cleanPath(String path) {
         String pathToUse = replace(path, "\\", "/");
 
@@ -107,14 +113,17 @@ public abstract class StringUtils {
         return prefix + collectionToDelimitedString(pathElements, "/");
     }
 
+    @SuppressWarnings("rawtypes")
     public static String collectionToCommaDelimitedString(Collection coll) {
         return collectionToDelimitedString(coll, ",");
     }
 
+    @SuppressWarnings("rawtypes")
     public static String collectionToDelimitedString(Collection coll, String delim) {
         return collectionToDelimitedString(coll, delim, "", "");
     }
 
+    @SuppressWarnings("rawtypes")
     public static String collectionToDelimitedString(Collection coll, String delim, String prefix, String suffix) {
         if (coll == null) {
             return "";
@@ -131,6 +140,7 @@ public abstract class StringUtils {
         return sb.toString();
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static Set commaDelimitedListToSet(String str) {
         Set set = new TreeSet();
         String[] tokens = commaDelimitedListToStringArray(str);
@@ -172,6 +182,7 @@ public abstract class StringUtils {
         return out.toString();
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static String[] delimitedListToStringArray(String str, String delimiter) {
         if (str == null)
             return new String[0];
@@ -257,6 +268,7 @@ public abstract class StringUtils {
         return ((obj instanceof String) ? quote((String) obj) : obj);
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static String[] removeDuplicateStrings(String[] array) {
         if ((array == null) || (array.length < 0))
             return array;
@@ -350,6 +362,7 @@ public abstract class StringUtils {
         return tokenizeToStringArray(str, delimiters, true, true);
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public static String[] tokenizeToStringArray(String str, String delimiters, boolean trimTokens,
             boolean ignoreEmptyTokens) {
         if (str == null)
@@ -366,6 +379,7 @@ public abstract class StringUtils {
         return toStringArray(tokens);
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static String[] toStringArray(Collection collection) {
         if (collection == null)
             return null;

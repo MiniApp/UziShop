@@ -11,6 +11,7 @@ public class DbConnection {
     @Autowired
     private DataSource dataSource;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public static final ThreadLocal<Connection> thread = new ThreadLocal();
 
     public Connection getConnection() {

@@ -49,6 +49,7 @@ public class PublicMethod {
         return rs;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public List<String> getAllTableName(String sqlStr) throws Exception {
         List list = null;
         try {
@@ -64,6 +65,7 @@ public class PublicMethod {
         return list;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public List<String> getAllColumns(String sqlStr) throws Exception {
         List list = null;
         try {
@@ -79,6 +81,7 @@ public class PublicMethod {
         return list;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public List<TableColumn> getDescribe(String sqlStr) throws Exception {
         List list = null;
         try {
@@ -102,6 +105,7 @@ public class PublicMethod {
         return list;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public List<String> loadSqlScript(String filePath) throws Exception {
         List sqlList = null;
         UnicodeReader inReader = null;

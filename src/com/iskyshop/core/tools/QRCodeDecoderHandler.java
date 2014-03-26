@@ -1,11 +1,11 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintStream;
+
 import javax.imageio.ImageIO;
+
 import jp.sourceforge.qrcode.QRCodeDecoder;
 import jp.sourceforge.qrcode.data.QRCodeImage;
 import jp.sourceforge.qrcode.exception.DecodingFailedException;
@@ -35,7 +35,7 @@ public class QRCodeDecoderHandler {
         QRCodeDecoderHandler handler = new QRCodeDecoderHandler();
         String imgPath = "d:/Michael_QRCode.png";
         String decoderContent = handler.decoderQRCode(imgPath);
-        System.out.println("½âÎö½á¹ûÈçÏÂ£º");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½");
         System.out.println(decoderContent);
         System.out.println("========decoder success!!!");
     }

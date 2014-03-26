@@ -1,8 +1,8 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.zip;
 
 import java.io.IOException;
 import java.util.Enumeration;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -11,12 +11,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 public class CompressionFilter implements Filter {
     protected Log log = LogFactory.getFactory().getInstance(super.getClass().getName());
 
+    @SuppressWarnings("rawtypes")
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
             ServletException {
         boolean compress = false;

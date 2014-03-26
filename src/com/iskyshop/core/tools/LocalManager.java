@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
 import java.util.Locale;
@@ -14,12 +13,14 @@ public class LocalManager {
         return ((locale != null) ? (Locale) locale.get() : Locale.getDefault());
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static void setLocale(Locale newLocale) {
         if (locale == null)
             locale = new ThreadLocal();
         locale.set(newLocale);
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static void setCustomLocale(Locale newLocale) {
         if (customLocale == null)
             customLocale = new ThreadLocal();
@@ -31,6 +32,6 @@ public class LocalManager {
     }
 
     public static void setDefaultLocal(Locale defaultLocal) {
-        defaultLocal = defaultLocal;
+        LocalManager.defaultLocal = defaultLocal;
     }
 }

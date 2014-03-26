@@ -1,13 +1,13 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
-import com.swetake.util.Qrcode;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.PrintStream;
+
 import javax.imageio.ImageIO;
+
+import com.swetake.util.Qrcode;
 
 public class QRCodeEncoderHandler {
     public void encoderQRCode(String content, String imgPath) {

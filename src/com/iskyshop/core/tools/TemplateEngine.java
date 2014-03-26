@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
 import java.io.StringWriter;
@@ -15,6 +14,7 @@ public class TemplateEngine {
     @Autowired
     private VelocityEngine velocityEngine;
 
+    @SuppressWarnings("rawtypes")
     public String generateWithTemplate(String templateName, Map map) {
         try {
             return VelocityEngineUtils.mergeTemplateIntoString(this.velocityEngine, templateName, "UTF-8", map);
@@ -24,6 +24,7 @@ public class TemplateEngine {
         return "";
     }
 
+    @SuppressWarnings("rawtypes")
     public String generateWithString(String content, Map map) {
         try {
             StringWriter writer = new StringWriter();

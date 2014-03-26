@@ -1,25 +1,26 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.core.tools;
 
-import com.easyjf.beans.BeanUtils;
-import com.easyjf.beans.BeanWrapper;
-import com.iskyshop.core.annotation.Lock;
-import com.iskyshop.core.domain.virtual.SysMap;
-import com.iskyshop.core.query.QueryObject;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.web.servlet.ModelAndView;
 
+import com.easyjf.beans.BeanUtils;
+import com.easyjf.beans.BeanWrapper;
+import com.iskyshop.core.annotation.Lock;
+import com.iskyshop.core.domain.virtual.SysMap;
+import com.iskyshop.core.query.QueryObject;
+
 public class WebForm {
+    @SuppressWarnings("rawtypes")
     public void Map2Obj(List<Map> maps, Object obj) {
         BeanWrapper wrapper = new BeanWrapper(obj);
         PropertyDescriptor[] propertys = wrapper.getPropertyDescriptors();
@@ -70,6 +71,7 @@ public class WebForm {
         }
     }
 
+    @SuppressWarnings({ "rawtypes", "unused", "unchecked" })
     public <T> T toPo(HttpServletRequest request, Class<T> classType) {
         Object obj = null;
         try {
@@ -91,6 +93,7 @@ public class WebForm {
         return (T) obj;
     }
 
+    @SuppressWarnings({ "rawtypes", "unused", "unchecked" })
     public Object toPo(HttpServletRequest request, Object obj) {
         try {
             Map map = request.getParameterMap();
@@ -110,6 +113,7 @@ public class WebForm {
         return obj;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked", "unused" })
     public void toQueryPo(HttpServletRequest request, QueryObject qo, Class classType, ModelAndView mv)
   {
     List sms = new ArrayList();
