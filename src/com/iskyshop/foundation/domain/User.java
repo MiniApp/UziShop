@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.annotation.Lock;
@@ -72,6 +71,7 @@ public class User extends IdEntity implements UserDetails {
 
     private int status;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany(targetEntity = Role.class, fetch = FetchType.LAZY)
     @JoinTable(name = "iskyshop_user_role", joinColumns = { @javax.persistence.JoinColumn(name = "user_id") }, inverseJoinColumns = { @javax.persistence.JoinColumn(name = "role_id") })
     private Set<Role> roles = new TreeSet();
@@ -108,6 +108,7 @@ public class User extends IdEntity implements UserDetails {
     @OneToOne(mappedBy = "user")
     private UserConfig config;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user")
     private List<Accessory> files = new ArrayList();
 
@@ -117,6 +118,7 @@ public class User extends IdEntity implements UserDetails {
     @ManyToOne
     private User parent;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "parent")
     private List<User> childs = new ArrayList();
 
@@ -133,15 +135,19 @@ public class User extends IdEntity implements UserDetails {
     @Column(columnDefinition = "LongText")
     private String store_quick_menu;
 
+    @SuppressWarnings("unchecked")
     @OneToMany(mappedBy = "pd_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Predeposit> posits = new ArrayList();
 
+    @SuppressWarnings("unchecked")
     @OneToMany(mappedBy = "pd_log_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<PredepositLog> user_predepositlogs = new ArrayList();
 
+    @SuppressWarnings("unchecked")
     @OneToMany(mappedBy = "pd_log_admin", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<PredepositLog> admin_predepositlogs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Address> addrs = new ArrayList();
 
