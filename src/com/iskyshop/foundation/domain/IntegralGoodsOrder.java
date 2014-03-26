@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -29,6 +28,7 @@ public class IntegralGoodsOrder extends IdEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private User igo_user;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "order", cascade = { javax.persistence.CascadeType.REMOVE,
             javax.persistence.CascadeType.PERSIST })
     private List<IntegralGoodsCart> igo_gcs = new ArrayList();

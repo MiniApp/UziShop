@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -26,6 +25,7 @@ public class GoodsFloor extends IdEntity {
 
     private int gf_goods_count;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "parent", cascade = { javax.persistence.CascadeType.REMOVE })
     @OrderBy("gf_sequence asc")
     private List<GoodsFloor> childs = new ArrayList();

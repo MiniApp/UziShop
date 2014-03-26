@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -30,6 +29,7 @@ public class SpareGoodsClass extends IdEntity {
     @Column(columnDefinition = "bit default true")
     private boolean viewInFloor;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "parent")
     @OrderBy("sequence asc")
     private List<SpareGoodsClass> childs = new ArrayList();
@@ -40,6 +40,7 @@ public class SpareGoodsClass extends IdEntity {
     @OneToOne(mappedBy = "sgc", fetch = FetchType.LAZY)
     private SpareGoodsFloor floor;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "spareGoodsClass")
     private List<SpareGoods> sgs = new ArrayList();
 

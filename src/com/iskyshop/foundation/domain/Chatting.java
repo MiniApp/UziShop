@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -27,6 +26,7 @@ public class Chatting extends IdEntity {
     @Column(columnDefinition = "int default 0")
     private int type;
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @OneToMany(mappedBy = "chatting", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<ChattingLog> logs = new ArrayList();
 

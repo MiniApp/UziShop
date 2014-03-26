@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.annotation.Lock;
@@ -247,6 +246,7 @@ public class SysConfig extends IdEntity {
     @Column(columnDefinition = "int default 3")
     private int combin_count;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "config")
     private List<Accessory> login_imgs = new ArrayList();
 

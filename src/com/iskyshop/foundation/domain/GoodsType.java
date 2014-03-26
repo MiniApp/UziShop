@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -20,17 +19,21 @@ public class GoodsType extends IdEntity {
 
     private int sequence;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany
     @JoinTable(name = "iskyshop_goodstype_spec", joinColumns = { @javax.persistence.JoinColumn(name = "type_id") }, inverseJoinColumns = { @javax.persistence.JoinColumn(name = "spec_id") })
     private List<GoodsSpecification> gss = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany
     @JoinTable(name = "iskyshop_goodstype_brand", joinColumns = { @javax.persistence.JoinColumn(name = "type_id") }, inverseJoinColumns = { @javax.persistence.JoinColumn(name = "brand_id") })
     private List<GoodsBrand> gbs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "goodsType", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<GoodsTypeProperty> properties = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "goodsType")
     private List<GoodsClass> gcs = new ArrayList();
 

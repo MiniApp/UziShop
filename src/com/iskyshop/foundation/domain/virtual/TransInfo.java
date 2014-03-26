@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain.virtual;
 
 import java.util.ArrayList;
@@ -11,6 +10,7 @@ public class TransInfo {
 
     private String state;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     List<TransContent> data = new ArrayList();
 
     public String getMessage() {

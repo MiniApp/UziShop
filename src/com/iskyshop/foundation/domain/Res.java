@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -23,6 +22,7 @@ public class Res extends IdEntity {
 
     private String value;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany(mappedBy = "reses", targetEntity = Role.class, fetch = FetchType.EAGER)
     private List<Role> roles = new ArrayList();
 
@@ -30,8 +30,10 @@ public class Res extends IdEntity {
 
     private String info;
 
+    @SuppressWarnings("unchecked")
     @Transient
     public String getRoleAuthorities() {
+        @SuppressWarnings({ "rawtypes" })
         List roleAuthorities = new ArrayList();
         for (Role role : this.roles) {
             roleAuthorities.add(role.getRoleCode());

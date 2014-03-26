@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -28,6 +27,7 @@ public class ExpressCompany extends IdEntity {
     @Column(columnDefinition = "int default 0")
     private int company_status;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "ec")
     List<OrderForm> ofs = new ArrayList();
 

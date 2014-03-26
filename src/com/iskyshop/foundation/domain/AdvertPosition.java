@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -52,6 +51,7 @@ public class AdvertPosition extends IdEntity {
     @Column(columnDefinition = "LongText")
     private String ap_code;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "ad_ap", cascade = { javax.persistence.CascadeType.REMOVE })
     @OrderBy("ad_slide_sequence asc")
     private List<Advert> advs = new ArrayList();

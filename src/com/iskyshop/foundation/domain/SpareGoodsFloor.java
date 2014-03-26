@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -28,6 +27,7 @@ public class SpareGoodsFloor extends IdEntity {
     @Column(columnDefinition = "bit default true")
     private boolean display;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "sgf")
     private List<SpareGoods> sgs = new ArrayList();
 

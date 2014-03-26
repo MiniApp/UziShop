@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -14,6 +13,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+@SuppressWarnings("rawtypes")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Entity
 @Table(name = "iskyshop_role")
@@ -34,6 +34,7 @@ public class Role extends IdEntity implements Comparable {
     @ManyToOne(fetch = FetchType.LAZY)
     private RoleGroup rg;
 
+    @SuppressWarnings("unchecked")
     @ManyToMany(targetEntity = Res.class, fetch = FetchType.LAZY)
     @JoinTable(name = "iskyshop_role_res", joinColumns = { @javax.persistence.JoinColumn(name = "role_id") }, inverseJoinColumns = { @javax.persistence.JoinColumn(name = "res_id") })
     private List<Res> reses = new ArrayList();

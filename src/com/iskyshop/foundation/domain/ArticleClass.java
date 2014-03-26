@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -30,9 +29,11 @@ public class ArticleClass extends IdEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private ArticleClass parent;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "parent", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<ArticleClass> childs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "articleClass", cascade = { javax.persistence.CascadeType.REMOVE })
     @OrderBy("addTime desc")
     private List<Article> articles = new ArrayList();

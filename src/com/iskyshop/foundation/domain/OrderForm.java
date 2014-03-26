@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.annotation.Lock;
@@ -28,6 +27,7 @@ public class OrderForm extends IdEntity {
 
     private String order_type;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "of")
     List<GoodsCart> gcs = new ArrayList();
 
@@ -87,9 +87,11 @@ public class OrderForm extends IdEntity {
 
     private String invoice;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "of", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<OrderFormLog> ofls = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "of", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<RefundLog> rls = new ArrayList();
 
@@ -108,12 +110,15 @@ public class OrderForm extends IdEntity {
     @Column(columnDefinition = "bit default 0")
     private boolean auto_confirm_sms;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "of", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<GoodsReturnLog> grls = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "of", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Evaluate> evas = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "of", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Complaint> complaints = new ArrayList();
 

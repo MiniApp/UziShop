@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -22,9 +21,11 @@ public class GoodsSpecification extends IdEntity {
 
     private String type;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany(mappedBy = "gss")
     private List<GoodsType> types = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "spec")
     @OrderBy("sequence asc")
     private List<GoodsSpecProperty> properties = new ArrayList();

@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -40,6 +39,7 @@ public class Coupon extends IdEntity {
     @OneToOne(fetch = FetchType.LAZY, cascade = { javax.persistence.CascadeType.REMOVE })
     private Accessory coupon_acc;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "coupon", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<CouponInfo> couponinfos = new ArrayList();
 

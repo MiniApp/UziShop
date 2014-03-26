@@ -22,6 +22,7 @@ public class GoodsReturn extends IdEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private OrderForm of;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "gr", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<GoodsReturnItem> items = new ArrayList();
 

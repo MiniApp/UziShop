@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -52,6 +51,7 @@ public class Dynamic extends IdEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private Dynamic turnParent;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "dissParent", cascade = { javax.persistence.CascadeType.REMOVE })
     List<Dynamic> childs = new ArrayList();
 

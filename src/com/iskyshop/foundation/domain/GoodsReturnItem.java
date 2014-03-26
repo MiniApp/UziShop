@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -27,6 +26,7 @@ public class GoodsReturnItem extends IdEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private GoodsReturn gr;
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @ManyToMany(cascade = { javax.persistence.CascadeType.ALL })
     @JoinTable(name = "iskyshop_return_gsp", joinColumns = { @javax.persistence.JoinColumn(name = "item_id") }, inverseJoinColumns = { @javax.persistence.JoinColumn(name = "gsp_id") })
     private List<GoodsSpecProperty> gsps = new ArrayList();

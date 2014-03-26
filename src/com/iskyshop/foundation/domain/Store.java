@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.annotation.Lock;
@@ -78,6 +77,7 @@ public class Store extends IdEntity {
     @OneToOne(fetch = FetchType.LAZY)
     private Accessory store_license;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "goods_store")
     private List<Goods> goods_list = new ArrayList();
 
@@ -104,6 +104,7 @@ public class Store extends IdEntity {
     @OneToOne(fetch = FetchType.LAZY)
     private StoreGrade update_grade;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<StoreSlide> slides = new ArrayList();
 
@@ -136,36 +137,46 @@ public class Store extends IdEntity {
 
     private Date combin_end_time;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<StoreGradeLog> logs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Payment> payments = new ArrayList();
 
     @OneToOne(mappedBy = "store", fetch = FetchType.LAZY, cascade = { javax.persistence.CascadeType.REMOVE })
     private StorePoint sp;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<StoreNavigation> navs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Favorite> favs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<GoodsClassStaple> gcss = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<OrderForm> ofs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<DeliveryLog> delivery_logs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<CombinLog> combin_logs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Transport> transport_list = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "store", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Dynamic> dynamics = new ArrayList();
 

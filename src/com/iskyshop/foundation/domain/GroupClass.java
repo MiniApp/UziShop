@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -24,10 +23,12 @@ public class GroupClass extends IdEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private GroupClass parent;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "parent", cascade = { javax.persistence.CascadeType.REMOVE })
     @OrderBy("gc_sequence asc")
     private List<GroupClass> childs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "gg_gc", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<GroupGoods> ggs = new ArrayList();
 

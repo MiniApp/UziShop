@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -66,6 +65,7 @@ public class IntegralGoods extends IdEntity {
 
     private int ig_click_count;
 
+    @SuppressWarnings({ "unchecked", "rawtypes", "unused" })
     @OneToMany(mappedBy = "goods", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<IntegralGoodsCart> gcs = new ArrayList();
 

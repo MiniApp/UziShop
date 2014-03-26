@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -30,6 +29,7 @@ public class Complaint extends IdEntity {
 
     private int status;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "complaint", cascade = { javax.persistence.CascadeType.ALL })
     private List<ComplaintGoods> cgs = new ArrayList();
 

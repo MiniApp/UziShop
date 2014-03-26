@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -21,6 +20,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 public class GoodsClass extends IdEntity {
     private String className;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "parent")
     @OrderBy("sequence asc")
     private List<GoodsClass> childs = new ArrayList();
@@ -45,9 +45,11 @@ public class GoodsClass extends IdEntity {
     @Column(columnDefinition = "LongText")
     private String seo_description;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "gc")
     private List<Goods> goods_list = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "gc")
     private List<GoodsClassStaple> gcss = new ArrayList();
 

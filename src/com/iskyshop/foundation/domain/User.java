@@ -135,15 +135,15 @@ public class User extends IdEntity implements UserDetails {
     @Column(columnDefinition = "LongText")
     private String store_quick_menu;
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "pd_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Predeposit> posits = new ArrayList();
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "pd_log_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<PredepositLog> user_predepositlogs = new ArrayList();
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "pd_log_admin", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<PredepositLog> admin_predepositlogs = new ArrayList();
 
@@ -151,63 +151,83 @@ public class User extends IdEntity implements UserDetails {
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Address> addrs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Album> albums = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Favorite> favs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<UserGoodsClass> ugcs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "fromUser", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Message> from_msgs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "toUser", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Message> to_msgs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "gold_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<GoldRecord> gold_record = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "gold_admin", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<GoldRecord> gold_record_admin = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "integral_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<IntegralLog> integral_logs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "operate_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<IntegralLog> integral_admin_logs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<SysLog> syslogs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Accessory> accs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<OrderForm> ofs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "consult_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Consult> user_consults = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "reply_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Consult> seller_consults = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "evaluate_seller_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Evaluate> seller_evaluate = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "evaluate_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Evaluate> user_evaluate = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "log_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<OrderFormLog> ofls = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "refund_user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<RefundLog> rls = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<SpareGoods> sgs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "user", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<GoodsBrand> brands = new ArrayList();
 
@@ -487,6 +507,7 @@ public class User extends IdEntity implements UserDetails {
         this.mobile = mobile;
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public GrantedAuthority[] get_all_Authorities() {
         List grantedAuthorities = new ArrayList(this.roles.size());
         for (Role role : this.roles) {
@@ -495,6 +516,7 @@ public class User extends IdEntity implements UserDetails {
         return ((GrantedAuthority[]) grantedAuthorities.toArray(new GrantedAuthority[this.roles.size()]));
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public GrantedAuthority[] get_common_Authorities() {
         List grantedAuthorities = new ArrayList(this.roles.size());
         for (Role role : this.roles) {
@@ -504,6 +526,7 @@ public class User extends IdEntity implements UserDetails {
         return ((GrantedAuthority[]) grantedAuthorities.toArray(new GrantedAuthority[grantedAuthorities.size()]));
     }
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public String getAuthoritiesString() {
         List authorities = new ArrayList();
         for (GrantedAuthority authority : getAuthorities()) {
@@ -540,6 +563,7 @@ public class User extends IdEntity implements UserDetails {
         return true;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public Map<String, List<Res>> getRoleResources() {
         if (this.roleResources == null) {
             this.roleResources = new HashMap();

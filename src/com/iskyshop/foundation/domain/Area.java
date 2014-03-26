@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -19,6 +18,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 public class Area extends IdEntity {
     private String areaName;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "parent", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Area> childs = new ArrayList();
 

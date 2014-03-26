@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -23,6 +22,7 @@ public class Album extends IdEntity {
 
     private int album_sequence;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "album", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Accessory> photos = new ArrayList();
 

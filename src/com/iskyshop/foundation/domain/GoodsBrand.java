@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -43,12 +42,14 @@ public class GoodsBrand extends IdEntity {
     @Column(columnDefinition = "LongText")
     private String remark;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany(mappedBy = "gbs")
     private List<GoodsType> types = new ArrayList();
 
     @ManyToOne(fetch = FetchType.LAZY)
     private GoodsBrandCategory category;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "goods_brand")
     private List<Goods> goods_list = new ArrayList();
 

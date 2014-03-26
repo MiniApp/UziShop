@@ -1,4 +1,3 @@
-/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
 package com.iskyshop.foundation.domain;
 
 import com.iskyshop.core.domain.IdEntity;
@@ -86,14 +85,17 @@ public class Goods extends IdEntity {
     @ManyToOne(cascade = { javax.persistence.CascadeType.REMOVE })
     private Accessory goods_main_photo;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany
     @JoinTable(name = "iskyshop_goods_photo", joinColumns = { @javax.persistence.JoinColumn(name = "goods_id") }, inverseJoinColumns = { @javax.persistence.JoinColumn(name = "photo_id") })
     private List<Accessory> goods_photos = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany
     @JoinTable(name = "iskyshop_goods_ugc", joinColumns = { @javax.persistence.JoinColumn(name = "goods_id") }, inverseJoinColumns = { @javax.persistence.JoinColumn(name = "class_id") })
     private List<UserGoodsClass> goods_ugcs = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany
     @JoinTable(name = "iskyshop_goods_spec", joinColumns = { @javax.persistence.JoinColumn(name = "goods_id") }, inverseJoinColumns = { @javax.persistence.JoinColumn(name = "spec_id") })
     @OrderBy("sequence asc")
@@ -133,6 +135,7 @@ public class Goods extends IdEntity {
     @Column(columnDefinition = "LongText")
     private String ztc_admin_content;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "gg_goods", fetch = FetchType.LAZY, cascade = { javax.persistence.CascadeType.REMOVE })
     private List<GroupGoods> group_goods_list = new ArrayList();
 
@@ -142,12 +145,15 @@ public class Goods extends IdEntity {
     @Column(columnDefinition = "int default 0")
     private int group_buy;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "goods", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Consult> consults = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "evaluate_goods", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Evaluate> evaluates = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "goods", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Favorite> favs = new ArrayList();
 
@@ -163,6 +169,7 @@ public class Goods extends IdEntity {
     @Column(columnDefinition = "int default 0")
     private int bargain_status;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "bg_goods", fetch = FetchType.LAZY)
     private List<BargainGoods> bgs = new ArrayList();
 
@@ -181,6 +188,7 @@ public class Goods extends IdEntity {
     @Column(precision = 12, scale = 2)
     private BigDecimal combin_price;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @ManyToMany
     @JoinTable(name = "iskyshop_goods_combin")
     private List<Goods> combin_goods = new ArrayList();
@@ -203,24 +211,29 @@ public class Goods extends IdEntity {
     @Column(precision = 4, scale = 1, columnDefinition = "Decimal default 5.0")
     private BigDecimal description_evaluate;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "goods", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<Dynamic> dynamics = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "bg_goods", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<BargainGoods> bargainGoods_list = new ArrayList();
 
     @OneToOne(mappedBy = "d_goods", cascade = { javax.persistence.CascadeType.REMOVE }, fetch = FetchType.LAZY)
     private DeliveryGoods d_main_goods;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "d_delivery_goods", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<DeliveryGoods> d_goods_list = new ArrayList();
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "ag_goods", cascade = { javax.persistence.CascadeType.REMOVE })
     private List<ActivityGoods> ag_goods_list = new ArrayList();
 
     @OneToOne(mappedBy = "goods", cascade = { javax.persistence.CascadeType.REMOVE }, fetch = FetchType.LAZY)
     private GoodsReturnItem gri;
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @OneToMany(mappedBy = "evaluate_goods")
     private List<Evaluate> evas = new ArrayList();
 
