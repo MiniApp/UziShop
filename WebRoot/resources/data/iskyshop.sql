@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50090
 File Encoding         : 65001
 
-Date: 2014-03-20 10:40:56
+Date: 2014-03-26 14:26:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,10 +36,7 @@ CREATE TABLE `iskyshop_accessory` (
   PRIMARY KEY  (`id`),
   KEY `FK9BF2D721537B6C51` (`user_id`),
   KEY `FK9BF2D7218603E3C3` (`album_id`),
-  KEY `FK9BF2D721707C8F90` (`config_id`),
-  KEY `FK9BF2D7218D8B425` (`config_id`),
-  KEY `FK9BF2D72130E5FE9C` (`user_id`),
-  KEY `FK9BF2D72155EB9AD8` (`album_id`)
+  KEY `FK9BF2D721707C8F90` (`config_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=426108 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -425,8 +422,7 @@ CREATE TABLE `iskyshop_activity` (
   `ac_acc_id` bigint(20) default NULL,
   `ac_rebate` decimal(3,2) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK11BFAD20D8BBB351` (`ac_acc_id`),
-  KEY `FK11BFAD207117D7E6` (`ac_acc_id`)
+  KEY `FK11BFAD20D8BBB351` (`ac_acc_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -450,10 +446,7 @@ CREATE TABLE `iskyshop_activity_goods` (
   PRIMARY KEY  (`id`),
   KEY `FK614D4F77DC166646` (`ag_admin_id`),
   KEY `FK614D4F7787F8C9EE` (`act_id`),
-  KEY `FK614D4F77632F565C` (`ag_goods_id`),
-  KEY `FK614D4F77B980F891` (`ag_admin_id`),
-  KEY `FK614D4F77ADEB3EB9` (`act_id`),
-  KEY `FK614D4F7733170D71` (`ag_goods_id`)
+  KEY `FK614D4F77632F565C` (`ag_goods_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -529,9 +522,7 @@ CREATE TABLE `iskyshop_address` (
   `user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FK9ABDBC32FB91D11` (`area_id`),
-  KEY `FK9ABDBC3537B6C51` (`user_id`),
-  KEY `FK9ABDBC3D23AF5C` (`area_id`),
-  KEY `FK9ABDBC330E5FE9C` (`user_id`)
+  KEY `FK9ABDBC3537B6C51` (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32774 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -568,19 +559,16 @@ CREATE TABLE `iskyshop_advert` (
   PRIMARY KEY  (`id`),
   KEY `FKCECB7A255A9A4C35` (`ad_user_id`),
   KEY `FKCECB7A25296B4EE3` (`ad_ap_id`),
-  KEY `FKCECB7A25409CE030` (`ad_acc_id`),
-  KEY `FKCECB7A253804DE80` (`ad_user_id`),
-  KEY `FKCECB7A25D747BF6E` (`ad_ap_id`),
-  KEY `FKCECB7A25D8F904C5` (`ad_acc_id`)
+  KEY `FKCECB7A25409CE030` (`ad_acc_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=262155 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_advert
 -- ----------------------------
 INSERT INTO `iskyshop_advert` VALUES ('1', '2012-12-23 21:16:27', '', '2012-12-14', '3', '2022-12-31', '0', '0', '1', '', '首页幻灯广告3', 'http://www.iskyshop.com', '12', '1', '1');
-INSERT INTO `iskyshop_advert` VALUES ('65536', '2012-12-17 17:13:15', '', '2012-12-16', '9', '2022-12-31', '0', '1', '1', '', '??????1', 'http://www.iskyshop.com', '10', '1', '1');
+INSERT INTO `iskyshop_advert` VALUES ('65536', '2012-12-17 17:13:15', '', '2012-12-16', '8', '2022-12-31', '0', '1', '1', '', '首页幻灯图片1', 'http://www.iskyshop.com', '10', '1', '1');
 INSERT INTO `iskyshop_advert` VALUES ('65537', '2012-12-17 17:16:37', '', '2012-12-15', '0', '2022-12-31', '0', '2', '1', '', '首页幻灯图片2', 'http://www.iskyshop.com', '11', '1', '1');
-INSERT INTO `iskyshop_advert` VALUES ('131073', '2012-12-18 12:30:35', '', '2012-12-18', '5', '2022-12-31', '0', '0', '1', '', '??????1', 'http://www.iskyshop.com', '23', '32768', '1');
+INSERT INTO `iskyshop_advert` VALUES ('131073', '2012-12-18 12:30:35', '', '2012-12-18', '4', '2022-12-31', '0', '0', '1', '', '首页滚动广告1', 'http://www.iskyshop.com', '23', '32768', '1');
 INSERT INTO `iskyshop_advert` VALUES ('163840', '2012-12-18 12:51:12', '', '2012-12-18', '3', '2022-12-31', '0', '0', '1', '', '首页滚动广告2', 'http://www.iskyshop.com', '5', '32768', '1');
 INSERT INTO `iskyshop_advert` VALUES ('163841', '2012-12-18 12:52:29', '', '2012-12-18', '2', '2022-12-31', '0', '0', '1', '', '首页滚动广告3', 'http://www.iskyshop.com', '22', '32768', '1');
 INSERT INTO `iskyshop_advert` VALUES ('163842', '2012-12-18 12:58:00', '', '2012-12-18', '3', '2022-12-31', '0', '0', '1', '', '首页滚动广告4', 'http://www.iskyshop.com', '21', '32768', '1');
@@ -626,8 +614,7 @@ CREATE TABLE `iskyshop_adv_pos` (
   `ap_width` int(11) NOT NULL,
   `ap_acc_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FKAA108971F2AFAA4` (`ap_acc_id`),
-  KEY `FKAA10897B7871F39` (`ap_acc_id`)
+  KEY `FKAA108971F2AFAA4` (`ap_acc_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=262157 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -672,10 +659,8 @@ CREATE TABLE `iskyshop_album` (
   `user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FK2FF965FE537B6C51` (`user_id`),
-  KEY `FK2FF965FE58AB9D6E` (`album_cover_id`),
-  KEY `FK2FF965FE30E5FE9C` (`user_id`),
-  KEY `FK2FF965FEF107C203` (`album_cover_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+  KEY `FK2FF965FE58AB9D6E` (`album_cover_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_album
@@ -698,6 +683,7 @@ INSERT INTO `iskyshop_album` VALUES ('15', '2014-02-28 21:21:44', '', null, '',
 INSERT INTO `iskyshop_album` VALUES ('16', '2014-03-01 00:04:28', '', null, '', '默认相册', '-10000', null, '32781');
 INSERT INTO `iskyshop_album` VALUES ('17', '2014-03-01 15:51:36', '', null, '', '默认相册', '-10000', null, '32782');
 INSERT INTO `iskyshop_album` VALUES ('18', '2014-03-01 16:13:53', '', null, '', '默认相册', '-10000', null, '32783');
+INSERT INTO `iskyshop_album` VALUES ('19', '2014-03-26 14:25:18', '', null, '', '默认相册', '-10000', null, '32784');
 
 -- ----------------------------
 -- Table structure for `iskyshop_area`
@@ -713,8 +699,7 @@ CREATE TABLE `iskyshop_area` (
   `parent_id` bigint(20) default NULL,
   `common` bit(1) default b'0',
   PRIMARY KEY  (`id`),
-  KEY `FK7D6B3B1ED79E13D4` (`parent_id`),
-  KEY `FK7D6B3B1EB508A61F` (`parent_id`)
+  KEY `FK7D6B3B1ED79E13D4` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4525504 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4253,8 +4238,7 @@ CREATE TABLE `iskyshop_article` (
   `url` varchar(255) default NULL,
   `articleClass_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK226D0CC544EDEDD1` (`articleClass_id`),
-  KEY `FK226D0CC58FB3051C` (`articleClass_id`)
+  KEY `FK226D0CC544EDEDD1` (`articleClass_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=196617 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4314,8 +4298,7 @@ CREATE TABLE `iskyshop_articleclass` (
   `sysClass` bit(1) NOT NULL,
   `parent_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK29AACFD3987F7269` (`parent_id`),
-  KEY `FK29AACFD3E34489B4` (`parent_id`)
+  KEY `FK29AACFD3987F7269` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=163844 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4371,9 +4354,7 @@ CREATE TABLE `iskyshop_bargain_goods` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `FKD9E21378E068D8E7` (`bg_admin_user_id`),
-  KEY `FKD9E21378F814091D` (`bg_goods_id`),
-  KEY `FKD9E21378BDD36B32` (`bg_admin_user_id`),
-  KEY `FKD9E21378C7FBC032` (`bg_goods_id`)
+  KEY `FKD9E21378F814091D` (`bg_goods_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4467,9 +4448,7 @@ CREATE TABLE `iskyshop_cart_gsp` (
   `cart_id` bigint(20) NOT NULL,
   `gsp_id` bigint(20) NOT NULL,
   KEY `FK74DC65762455EE19` (`cart_id`),
-  KEY `FK74DC657626F16245` (`gsp_id`),
-  KEY `FK74DC6576BCB212AE` (`cart_id`),
-  KEY `FK74DC65768EBE21DA` (`gsp_id`)
+  KEY `FK74DC657626F16245` (`gsp_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4648,9 +4627,7 @@ CREATE TABLE `iskyshop_chatting` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `FKCA2F34574C4E4476` (`user1_id`),
-  KEY `FKCA2F34574C4EB8D5` (`user2_id`),
-  KEY `FKCA2F345729B8D6C1` (`user1_id`),
-  KEY `FKCA2F345729B94B20` (`user2_id`)
+  KEY `FKCA2F34574C4EB8D5` (`user2_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4673,9 +4650,7 @@ CREATE TABLE `iskyshop_chattingfriend` (
   UNIQUE KEY `id` (`id`),
   KEY `FK9DBC61B5537B6C51` (`user_id`),
   KEY `FK9DBC61B516CF789E` (`friend_id`),
-  KEY `FK9DBC61B584EFD3F3` (`friendUser_id`),
-  KEY `FK9DBC61B530E5FE9C` (`user_id`),
-  KEY `FK9DBC61B5625A663E` (`friendUser_id`)
+  KEY `FK9DBC61B584EFD3F3` (`friendUser_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4697,9 +4672,7 @@ CREATE TABLE `iskyshop_chattinglog` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `FK6B3D7B8D593482F1` (`chatting_id`),
-  KEY `FK6B3D7B8D537B6C51` (`User_id`),
-  KEY `FK6B3D7B8D7F26F7BC` (`chatting_id`),
-  KEY `FK6B3D7B8D30E5FE9C` (`User_id`)
+  KEY `FK6B3D7B8D537B6C51` (`User_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4720,8 +4693,7 @@ CREATE TABLE `iskyshop_combin_log` (
   `store_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FK1CEAE93C920D7683` (`store_id`),
-  KEY `FK1CEAE93C61F52D98` (`store_id`)
+  KEY `FK1CEAE93C920D7683` (`store_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4767,18 +4739,7 @@ CREATE TABLE `iskyshop_complaint` (
   KEY `FKC66284BA8228D142` (`cs_id`),
   KEY `FKC66284BA735C3580` (`to_acc2_id`),
   KEY `FKC66284BA4BA5E0BC` (`from_user_id`),
-  KEY `FKC66284BA9F21119E` (`of_id`),
-  KEY `FKC66284BABB7E5B6` (`to_acc1_id`),
-  KEY `FKC66284BAE4DB6B85` (`handle_user_id`),
-  KEY `FKC66284BAB86908D8` (`to_user_id`),
-  KEY `FKC66284BA7C5FC444` (`from_acc2_id`),
-  KEY `FKC66284BA7C5F4FE5` (`from_acc1_id`),
-  KEY `FKC66284BABB8CE74` (`to_acc3_id`),
-  KEY `FKC66284BA7C6038A3` (`from_acc3_id`),
-  KEY `FKC66284BA2AAB4B0D` (`cs_id`),
-  KEY `FKC66284BABB85A15` (`to_acc2_id`),
-  KEY `FKC66284BA29107307` (`from_user_id`),
-  KEY `FKC66284BA377D3633` (`of_id`)
+  KEY `FKC66284BA9F21119E` (`of_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4798,9 +4759,7 @@ CREATE TABLE `iskyshop_complaint_goods` (
   `goods_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FKC2B28B91A995E663` (`goods_id`),
-  KEY `FKC2B28B915E500DC3` (`complaint_id`),
-  KEY `FKC2B28B91797D9D78` (`goods_id`),
-  KEY `FKC2B28B91F6AC3258` (`complaint_id`)
+  KEY `FKC2B28B915E500DC3` (`complaint_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4844,10 +4803,7 @@ CREATE TABLE `iskyshop_consult` (
   PRIMARY KEY  (`id`),
   KEY `FK86CB3BBB66DC9BFC` (`reply_user_id`),
   KEY `FK86CB3BBBA995E663` (`goods_id`),
-  KEY `FK86CB3BBBCAAD62FE` (`consult_user_id`),
-  KEY `FK86CB3BBB44472E47` (`reply_user_id`),
-  KEY `FK86CB3BBB797D9D78` (`goods_id`),
-  KEY `FK86CB3BBBA817F549` (`consult_user_id`)
+  KEY `FK86CB3BBBCAAD62FE` (`consult_user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4871,8 +4827,7 @@ CREATE TABLE `iskyshop_coupon` (
   `coupon_acc_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FKD2CFE277EA801ACD` (`coupon_acc_id`),
-  KEY `FKD2CFE27782DC3F62` (`coupon_acc_id`)
+  KEY `FKD2CFE277EA801ACD` (`coupon_acc_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4897,9 +4852,7 @@ CREATE TABLE `iskyshop_coupon_info` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `FKE4A2D7682F288B1` (`coupon_id`),
-  KEY `FKE4A2D76537B6C51` (`user_id`),
-  KEY `FKE4A2D76B001B43C` (`coupon_id`),
-  KEY `FKE4A2D7630E5FE9C` (`user_id`)
+  KEY `FKE4A2D76537B6C51` (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4927,10 +4880,7 @@ CREATE TABLE `iskyshop_delivery_goods` (
   UNIQUE KEY `id` (`id`),
   KEY `FK858B789CC3254733` (`d_delivery_goods_id`),
   KEY `FK858B789C1BAB47DE` (`d_goods_id`),
-  KEY `FK858B789C78FFAAC6` (`d_admin_user_id`),
-  KEY `FK858B789C930CFE48` (`d_delivery_goods_id`),
-  KEY `FK858B789CEB92FEF3` (`d_goods_id`),
-  KEY `FK858B789C566A3D11` (`d_admin_user_id`)
+  KEY `FK858B789C78FFAAC6` (`d_admin_user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4961,8 +4911,7 @@ CREATE TABLE `iskyshop_delivery_log` (
   `store_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FK69A11E0A920D7683` (`store_id`),
-  KEY `FK69A11E0A61F52D98` (`store_id`)
+  KEY `FK69A11E0A920D7683` (`store_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5021,13 +4970,7 @@ CREATE TABLE `iskyshop_dynamic` (
   KEY `FKCCB9A00E537B6C51` (`user_id`),
   KEY `FKCCB9A00E54ED135B` (`turnParent_id`),
   KEY `FKCCB9A00EEB7ECE12` (`img_id`),
-  KEY `FKCCB9A00E920D7683` (`store_id`),
-  KEY `FKCCB9A00E797D9D78` (`goods_id`),
-  KEY `FKCCB9A00E83DAF2A7` (`img_id`),
-  KEY `FKCCB9A00EDF931908` (`dissParent_id`),
-  KEY `FKCCB9A00E30E5FE9C` (`user_id`),
-  KEY `FKCCB9A00EC9C35930` (`turnParent_id`),
-  KEY `FKCCB9A00E61F52D98` (`store_id`)
+  KEY `FKCCB9A00E920D7683` (`store_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5070,11 +5013,7 @@ CREATE TABLE `iskyshop_evaluate` (
   KEY `FK7E1866AAAC64FF7` (`evaluate_seller_user_id`),
   KEY `FK7E1866AA95BC8749` (`evaluate_goods_id`),
   KEY `FK7E1866AA9D2A16AB` (`evaluate_user_id`),
-  KEY `FK7E1866AA9F21119E` (`of_id`),
-  KEY `FK7E1866AAE830E242` (`evaluate_seller_user_id`),
-  KEY `FK7E1866AA65A43E5E` (`evaluate_goods_id`),
-  KEY `FK7E1866AA7A94A8F6` (`evaluate_user_id`),
-  KEY `FK7E1866AA377D3633` (`of_id`)
+  KEY `FK7E1866AA9F21119E` (`of_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5147,10 +5086,7 @@ CREATE TABLE `iskyshop_favorite` (
   PRIMARY KEY  (`id`),
   KEY `FKB31583ADA995E663` (`goods_id`),
   KEY `FKB31583AD537B6C51` (`user_id`),
-  KEY `FKB31583AD920D7683` (`store_id`),
-  KEY `FKB31583AD797D9D78` (`goods_id`),
-  KEY `FKB31583AD30E5FE9C` (`user_id`),
-  KEY `FKB31583AD61F52D98` (`store_id`)
+  KEY `FKB31583AD920D7683` (`store_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=131077 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5186,10 +5122,7 @@ CREATE TABLE `iskyshop_gold_log` (
   PRIMARY KEY  (`id`),
   KEY `FKEDD9DCF6FDCC66F7` (`gr_id`),
   KEY `FKEDD9DCF61EE1CC67` (`gl_admin_id`),
-  KEY `FKEDD9DCF6B6766AF7` (`gl_user_id`),
-  KEY `FKEDD9DCF670F4D502` (`gr_id`),
-  KEY `FKEDD9DCF6FC4C5EB2` (`gl_admin_id`),
-  KEY `FKEDD9DCF693E0FD42` (`gl_user_id`)
+  KEY `FKEDD9DCF6B6766AF7` (`gl_user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5228,9 +5161,7 @@ CREATE TABLE `iskyshop_gold_record` (
   `gold_user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FK5A87D5FB1CC134C` (`gold_admin_id`),
-  KEY `FK5A87D5F81653372` (`gold_user_id`),
-  KEY `FK5A87D5F8F36A597` (`gold_admin_id`),
-  KEY `FK5A87D5F5ECFC5BD` (`gold_user_id`)
+  KEY `FK5A87D5F81653372` (`gold_user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5311,14 +5242,7 @@ CREATE TABLE `iskyshop_goods` (
   KEY `FK304F7EE5F140A6A4` (`goods_brand_id`),
   KEY `FK304F7EE5C292B563` (`ztc_admin_id`),
   KEY `FK304F7EE5493829C3` (`group_id`),
-  KEY `FK304F7EE5914F1503` (`transport_id`),
-  KEY `FK304F7EE545B36875` (`goods_main_photo_id`),
-  KEY `FK304F7EE5DF063A62` (`gc_id`),
-  KEY `FK304F7EE5EEC0A861` (`goods_store_id`),
-  KEY `FK304F7EE529AB3998` (`transport_id`),
-  KEY `FK304F7EE5646914AF` (`goods_brand_id`),
-  KEY `FK304F7EE5191FE0D8` (`group_id`),
-  KEY `FK304F7EE59FFD47AE` (`ztc_admin_id`)
+  KEY `FK304F7EE5914F1503` (`transport_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=98461 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5333,7 +5257,7 @@ INSERT INTO `iskyshop_goods` VALUES ('7', '2012-12-24 13:36:46', '', '25', '', n
 INSERT INTO `iskyshop_goods` VALUES ('8', '2012-12-24 13:37:38', '', '22', '', null, '200', '[]', '秋冬新款改良修身版 加厚加绒男式保暖衬衫男士长袖保暖衬衣', '300.00', '[{\"val\":\"中长款（衣长50-70CM）\",\"id\":\"3\",\"name\":\"衣长\"}, {\"val\":\"纯棉\",\"id\":\"2\",\"name\":\"材质\"}, {\"val\":\"长袖\",\"id\":\"1\",\"name\":\"款式\"}]', '', '0', null, null, '0', '0', '1.20', 'all', '', '', '235.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '12', '2', '65542', '1', null, '0', '0', '0', null, '0', '0', '0', '235.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('9', '2012-12-24 13:38:46', '', '50', '', null, '200', '[]', '青年牛仔服男装立领牛仔外套男士春秋蓝色单夹克薄款外套', '700.00', '[{\"val\":\"中长款（衣长50-70CM）\",\"id\":\"3\",\"name\":\"衣长\"}, {\"val\":\"纯棉\",\"id\":\"2\",\"name\":\"材质\"}, {\"val\":\"长袖\",\"id\":\"1\",\"name\":\"款式\"}]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '5', '3', '65543', '1', null, '0', '2', '0', '2', '0', '0', '0', '500.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('32768', '2012-12-24 13:44:05', '', '28', '', null, '200', '[]', 'KAROHS男装秋冬装2012新款 韩版男士 毛衣 男 针织衫 毛线衣', '700.00', '[]', '', '0', null, '', '0', '0', '1.20', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '9', '2', '98304', '1', null, '0', '0', '0', null, '0', '0', '0', '600.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
-INSERT INTO `iskyshop_goods` VALUES ('32769', '2012-12-24 13:46:30', '', '40', '', null, '200', '[]', '???????????????T?angry birds 2012??', '300.00', '[{\"val\":\"?????35-50CM?\",\"id\":\"3\",\"name\":\"??\"}, {\"val\":\"??\",\"id\":\"2\",\"name\":\"??\"}, {\"val\":\"??\",\"id\":\"1\",\"name\":\"??\"}]', '', '0', null, null, '0', '0', '0.30', 'all', '', '', '238.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '8', null, '98305', '1', null, '0', '0', '0', null, '0', '0', '0', '238.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
+INSERT INTO `iskyshop_goods` VALUES ('32769', '2012-12-24 13:46:30', '', '39', '', null, '200', '[]', '潮人馆外贸品牌春秋男装男士短袖T恤angry birds 2012新款', '300.00', '[{\"val\":\"短款（衣长35-50CM）\",\"id\":\"3\",\"name\":\"衣长\"}, {\"val\":\"真丝\",\"id\":\"2\",\"name\":\"材质\"}, {\"val\":\"短袖\",\"id\":\"1\",\"name\":\"款式\"}]', '', '0', null, null, '0', '0', '0.30', 'all', '', '', '238.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '8', null, '98305', '1', null, '0', '0', '0', null, '0', '0', '0', '238.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('65536', '2012-12-24 14:38:02', '', '57', '<div align=\"center\">\r\n	<img src=\"http://localhost/upload/store/1/2012/12/24/e114be9b-5790-4c6e-a411-9aa0164a3216.jpg\" /> \r\n</div>', null, '200', '[]', '冬少女装韩版短款羽绒服 白领时尚连帽休闲棉服 短外套', '700.00', '[{\"val\":\"中长款（衣长50-70CM）\",\"id\":\"3\",\"name\":\"衣长\"}, {\"val\":\"纯棉\",\"id\":\"2\",\"name\":\"材质\"}, {\"val\":\"长袖\",\"id\":\"1\",\"name\":\"款式\"}]', '', '0', null, '', '0', '0', '2.50', 'all', '女装', '女装', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '13', '4', '131072', '1', null, '0', '0', '0', null, '0', '0', '2', '600.00', '2.00', '0.00', '0.00', '0.00', '2', '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('65537', '2012-12-24 14:42:52', '', '19', '', null, '200', '[]', '彬伊奴bindwood秋冬女装新款韩版纯棉长袖T恤纯色修身打底衫', '300.00', '[{\"val\":\"中长款（衣长50-70CM）\",\"id\":\"3\",\"name\":\"衣长\"}, {\"val\":\"真丝\",\"id\":\"2\",\"name\":\"材质\"}, {\"val\":\"长袖\",\"id\":\"1\",\"name\":\"款式\"}]', '', '0', null, null, '0', '0', '0.30', 'all', '', '', '235.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '15', '6', '131073', '1', null, '0', '0', '0', null, '0', '0', '0', '235.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('65538', '2012-12-24 14:44:02', '', '24', '', null, '200', '[]', '秋冬装新款 韩版女装 运动休闲抓绒印花高领卫衣套装', '700.00', '[{\"val\":\"中长款（衣长50-70CM）\",\"id\":\"3\",\"name\":\"衣长\"}, {\"val\":\"聚酯\",\"id\":\"2\",\"name\":\"材质\"}, {\"val\":\"长袖\",\"id\":\"1\",\"name\":\"款式\"}]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '15', '4', '131074', '1', null, '0', '0', '0', null, '0', '0', '0', '600.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
@@ -5360,7 +5284,7 @@ INSERT INTO `iskyshop_goods` VALUES ('98321', '2012-12-24 15:15:36', '', '24', '
 INSERT INTO `iskyshop_goods` VALUES ('98322', '2012-12-24 15:16:35', '', '17', '', null, '200', '[]', '意大利零度 2012新品 羊毛保暖男鞋 时尚潮流皮鞋 粘搭男鞋', '700.00', '[]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '33', null, '163858', '1', null, '0', '0', '0', null, '0', '0', '0', '600.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98323', '2012-12-24 15:16:58', '', '18', '', null, '500', '[]', 'LISKAMM雷石 户外运动 透气防水防风男士冲锋衣113M', '200.00', '[]', '', '0', null, null, '0', '0', '0.80', 'all', '', '', '180.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '54', '1', '163859', '1', null, '0', '2', '0', '2', '0', '0', '0', '100.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98324', '2012-12-24 15:19:14', '', '10', '', null, '500', '[]', '塞沃斯SWS 正品情侣款特厚保暖软壳抓绒衣', '300.00', '[]', '', '0', null, null, '0', '0', '0.80', 'all', '', '', '150.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '54', null, '163860', '1', null, '0', '0', '0', null, '0', '0', '0', '150.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
-INSERT INTO `iskyshop_goods` VALUES ('98325', '2012-12-24 15:19:29', '', '19', '', null, '200', '[]', '欧邦鼠 2012新品 时尚男鞋英伦休闲鞋 真皮商务皮鞋', '700.00', '[]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '30', null, '163861', '1', null, '0', '0', '0', null, '0', '0', '0', '600.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
+INSERT INTO `iskyshop_goods` VALUES ('98325', '2012-12-24 15:19:29', '', '20', '', null, '200', '[]', '欧邦鼠 2012新品 时尚男鞋英伦休闲鞋 真皮商务皮鞋', '700.00', '[]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '30', null, '163861', '1', null, '0', '0', '0', null, '0', '0', '0', '600.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98326', '2012-12-24 15:20:19', '', '18', '', null, '200', '[]', '瓦萨琪日常休闲头层牛皮男士皮鞋 平底鞋', '300.00', '[]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '235.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '30', null, '163862', '1', null, '0', '0', '0', null, '0', '0', '0', '235.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98327', '2012-12-24 15:20:37', '', '10', '', null, '1000', '[]', 'LISKAMM雷石 户外运动 防风防水冲锋衣', '200.00', '[]', '', '0', null, null, '0', '0', '0.80', 'all', '', '', '189.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '54', '3', '163863', '1', null, '0', '0', '0', null, '0', '0', '0', '189.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98328', '2012-12-24 15:21:11', '', '18', '', null, '0', '[]', '范东尼 新款舒适牛皮头层皮镂空透气天窗商务休闲男皮鞋', '700.00', '[]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '30', null, '163864', '1', null, '0', '0', '0', null, '0', '0', '0', '600.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
@@ -5376,7 +5300,7 @@ INSERT INTO `iskyshop_goods` VALUES ('98337', '2012-12-24 15:26:00', '', '28', '
 INSERT INTO `iskyshop_goods` VALUES ('98338', '2012-12-24 15:27:54', '', '19', '', null, '1000', '[]', '外正品 冬季热卖 新款双层可拆卸抓绒内胆 男女冲锋裤', '299.00', '[]', '', '0', null, null, '0', '0', '0.80', 'all', '', '', '199.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '54', '11', '163876', '1', null, '0', '0', '0', null, '0', '0', '0', '199.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98339', '2012-12-24 15:29:22', '', '12', '', null, '1000', '[]', '兰德斯正品 户外马甲多功能马甲 男款防晒防紫外线摄影马甲', '123.00', '[]', '', '0', null, null, '0', '0', '1.20', 'all', '', '', '54.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '54', '4', '163874', '1', null, '0', '0', '0', null, '0', '0', '0', '54.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98340', '2012-12-24 15:30:27', '', '21', '', null, '200', '[]', '名典女鞋水钻高筒靴过膝长靴细高跟靴子包邮女靴', '700.00', '[]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '42', null, '163875', '1', null, '0', '0', '0', null, '0', '0', '0', '600.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
-INSERT INTO `iskyshop_goods` VALUES ('98341', '2012-12-24 15:32:02', '', '21', '', null, '200', '[]', '新款秋冬短靴 真皮磨砂牛皮马丁靴 平跟裸靴女靴子', '700.00', '[]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '41', null, '163877', '1', null, '0', '0', '0', null, '0', '0', '0', '600.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
+INSERT INTO `iskyshop_goods` VALUES ('98341', '2012-12-24 15:32:02', '', '22', '', null, '200', '[]', '新款秋冬短靴 真皮磨砂牛皮马丁靴 平跟裸靴女靴子', '700.00', '[]', '', '0', null, null, '0', '0', '2.50', 'all', '', '', '600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '41', null, '163877', '1', null, '0', '0', '0', null, '0', '0', '0', '600.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98342', '2012-12-24 15:32:48', '', '17', '', null, '1000', '[]', '立体裁剪 正品秋季男款速干衬衣 新款户外长袖速干T恤', '299.00', '[]', '', '0', null, null, '0', '0', '0.80', 'all', '', '', '159.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '54', '3', '163878', '1', null, '0', '0', '0', null, '0', '0', '2', '159.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98343', '2012-12-24 15:34:43', '', '10', '', null, '1200', '[]', '美骆世家Camssoo高帮全皮户外鞋登山鞋', '588.00', '[]', '', '0', null, null, '0', '0', '0.10', 'all', '', '', '255.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '55', '2', '163879', '1', null, '0', '0', '0', null, '0', '0', '0', '255.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98344', '2012-12-24 15:34:55', '', '23', '', null, '199', '[]', '2012冬款经典流行时尚简约短靴牛筋底雪地靴可大码', '1000.00', '[]', '', '1', null, null, '0', '0', '2.50', 'all', '', '', '890.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '41', null, '163880', '1', null, '0', '0', '0', null, '0', '0', '2', '890.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
@@ -5439,7 +5363,7 @@ INSERT INTO `iskyshop_goods` VALUES ('98400', '2012-12-24 16:23:23', '', '17', '
 INSERT INTO `iskyshop_goods` VALUES ('98401', '2012-12-24 16:25:50', '', '22', '', null, '1000', '[]', '苹果iPhone 5（16GB） 您的体验是我们最大的努力方向', '5200.00', '[]', '', '0', null, null, '0', '0', '0.10', 'all', '', '', '4999.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '75', null, '163941', '1', null, '0', '2', '0', '2', '0', '0', '0', '4208.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98402', '2012-12-24 16:26:23', '', '24', '', null, '200', '[]', '韩版时尚女士单肩手提斜跨包包', '700.00', '[]', '', '0', null, null, '0', '0', '0.20', 'all', '', '', '567.00', '', '2012-12-24 16:32:36', null, null, null, '0', '0', '0', '0', '0', '0', '38', null, '163942', '1', null, '0', '0', '0', null, '0', '2', '0', '453.60', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98403', '2012-12-24 16:26:57', '', '16', '', null, '1000', '[]', '三星GALAXY Note II N7100（16GB）', '4666.00', '[]', '', '0', null, null, '0', '0', '0.10', 'all', '', '', '3999.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '75', null, '163947', '1', null, '0', '0', '0', null, '0', '2', '0', '3199.20', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
-INSERT INTO `iskyshop_goods` VALUES ('98404', '2012-12-24 16:27:27', '', '38', '', null, '200', '[]', '???????? ??? ?? ????? ?????', '290.00', '[]', '', '0', null, null, '0', '0', '0.10', 'all', '', '', '126.00', '', '2012-12-24 16:32:44', null, null, null, '0', '0', '0', '0', '0', '0', '175', null, '163948', '1', null, '0', '0', '0', null, '0', '2', '0', '100.80', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
+INSERT INTO `iskyshop_goods` VALUES ('98404', '2012-12-24 16:27:27', '', '37', '', null, '200', '[]', '化妆工具套装包邮 腮红刷 大号 卡姿兰套刷 化妆刷套装', '290.00', '[]', '', '0', null, null, '0', '0', '0.10', 'all', '', '', '126.00', '', '2012-12-24 16:32:44', null, null, null, '0', '0', '0', '0', '0', '0', '175', null, '163948', '1', null, '0', '0', '0', null, '0', '2', '0', '100.80', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98405', '2012-12-24 16:27:53', '', '13', '', null, '1000', '[]', '三星I9100 GALAXY SII', '4999.00', '[]', '', '0', null, null, '0', '0', '0.10', 'all', '', '', '3999.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '75', null, '163953', '1', null, '0', '0', '0', null, '0', '0', '0', '3999.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98406', '2012-12-24 16:28:23', '', '48', '', null, '198', '[]', '旅行袋韩版男女手提包 超大行李包休闲袋旅行包', '490.00', '[]', '', '2', null, null, '0', '0', '0.50', 'all', '', '', '386.00', '', '2012-12-24 16:32:52', null, null, null, '0', '0', '0', '0', '0', '0', '36', null, '163954', '1', null, '0', '0', '0', null, '0', '2', '0', '308.80', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98407', '2012-12-24 16:28:53', '', '17', '', null, '10000', '[]', '三星GALAXY Note I9220', '5000.00', '[]', '', '0', null, null, '0', '0', '0.10', 'all', '', '', '4888.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '75', null, '163959', '1', null, '0', '0', '0', null, '0', '2', '0', '3910.40', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
@@ -5477,7 +5401,7 @@ INSERT INTO `iskyshop_goods` VALUES ('98438', '2012-12-24 17:04:07', '', '15', '
 INSERT INTO `iskyshop_goods` VALUES ('98439', '2012-12-24 17:06:12', '', '9', '', null, '100', '[]', '手感体验最优化设计 罗技M235无线鼠标', '30.00', '[]', '', '0', null, null, '0', '0', '0.20', 'all', '', '', '29.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '65542', null, '164004', '1', null, '0', '0', '0', null, '0', '2', '0', '29.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98440', '2012-12-24 17:06:58', '', '22', '', null, '100', '[]', '超值优惠折上折 华硕CG8580-C11C', '50.00', '[]', '', '0', null, null, '0', '0', '0.20', 'all', '', '', '36.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '65542', null, '164005', '1', null, '0', '0', '0', null, '0', '1', '0', '36.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98441', '2012-12-24 17:08:22', '', '15', '', null, '100', '[]', '超值体验金属质感 联想新圆梦F2895键盘', '50.00', '[]', '', '0', null, null, '0', '0', '0.50', 'all', '', '', '30.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '65542', '14', '164006', '1', null, '0', '0', '0', null, '0', '1', '0', '30.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
-INSERT INTO `iskyshop_goods` VALUES ('98442', '2012-12-24 17:09:52', '', '19', '', null, '100', '[]', 'Intel???? ????3?', '500.00', '[]', '', '0', null, '', '0', '0', '1.00', 'all', '', '', '400.00', '', null, '', '2013-10-28 12:16:35', '2013-10-28', '0', '300', '1500', '1', '300', '3', '65542', null, '164007', '1', '1', '0', '0', '0', null, '0', '0', '0', '400.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
+INSERT INTO `iskyshop_goods` VALUES ('98442', '2012-12-24 17:09:52', '', '19', '', null, '100', '[]', 'Intel主板芯片 四核酷睿3代', '500.00', '[]', '', '0', null, '', '0', '0', '1.00', 'all', '', '', '400.00', '', null, '', '2013-10-28 12:16:35', '2013-10-28', '0', '300', '1800', '1', '300', '3', '65542', null, '164007', '1', '1', '0', '0', '0', null, '0', '0', '0', '400.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98443', '2012-12-24 17:11:31', '', '13', '', null, '100', '[]', 'SSK 黑鹰II USB3.0 2.5英寸硬盘盒', '400.00', '[]', '', '0', null, '', '0', '0', '0.50', 'all', '', '', '360.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '65542', null, '164008', '1', null, '0', '0', '0', null, '0', '1', '0', '360.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98444', '2012-12-24 17:13:47', '', '19', '', null, '100', '[]', '爱宝（aibao）A-16U 激光扫描枪', '400.00', '[]', '', '0', null, '', '0', '0', '0.50', 'all', '', '', '300.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '65542', null, '164009', '1', null, '0', '0', '0', null, '0', '0', '0', '300.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98445', '2012-12-24 17:14:47', '', '21', '', null, '100', '[]', '松下（Panasonic）KX-FP7006CN 普通纸传真机', '500.00', '[]', '', '0', null, '', '0', '0', '1.00', 'all', '', '', '455.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '65542', null, '164010', '1', null, '0', '0', '0', null, '0', '2', '0', '364.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', '2014-03-01');
@@ -5485,14 +5409,14 @@ INSERT INTO `iskyshop_goods` VALUES ('98446', '2012-12-24 17:15:46', '', '19', '
 INSERT INTO `iskyshop_goods` VALUES ('98447', '2012-12-24 17:16:48', '', '23', '', null, '100', '[]', '惠普（HP）Deskjet 1000 彩色喷墨打印机', '2000.00', '[]', '', '0', null, '', '0', '0', '5.00', 'all', '', '', '1960.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '65542', null, '164012', '1', null, '0', '0', '0', null, '0', '0', '0', '1960.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', '2014-03-01');
 INSERT INTO `iskyshop_goods` VALUES ('98448', '2012-12-24 17:19:23', '', '24', '', null, '100', '[]', '漫步者e1100 音乐发烧友特惠折扣', '200.00', '[]', '', '0', null, '', '0', '0', '1.30', 'all', '', '', '150.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '91', null, '164013', '1', null, '1', '0', '0', null, '0', '1', '0', '150.00', null, null, null, null, null, '0', null, null, null, '5', '', '2014-03-01', '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98449', '2012-12-24 17:20:14', '', '18', '', null, '100', '[]', '最新超级高清播放器 惠威T200B音乐监听大师', '400.00', '[]', '', '0', null, '', '0', '0', '1.00', 'all', '', '', '366.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '91', null, '164014', '1', null, '0', '0', '0', null, '0', '0', '0', '366.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', '2014-03-01');
-INSERT INTO `iskyshop_goods` VALUES ('98450', '2012-12-24 17:21:40', '', '23', '', null, '100', '[]', '??????? ???????', '1000.00', '[]', '', '0', null, '', '0', '0', '2.00', 'all', '', '', '700.00', '', null, '', '2013-10-28 12:15:57', '2013-10-28', '0', '300', '1500', '1', '300', '3', '91', null, '164015', '1', '1', '0', '0', '0', null, '0', '0', '0', '700.00', null, null, null, null, null, '0', null, null, null, '5', '', '2014-03-01', '', null);
+INSERT INTO `iskyshop_goods` VALUES ('98450', '2012-12-24 17:21:40', '', '23', '', null, '100', '[]', '超级优惠打折扣 飞利浦迷你音响', '1000.00', '[]', '', '0', null, '', '0', '0', '2.00', 'all', '', '', '700.00', '', null, '', '2013-10-28 12:15:57', '2013-10-28', '0', '300', '1800', '1', '300', '3', '91', null, '164015', '1', '1', '0', '0', '0', null, '0', '0', '0', '700.00', null, null, null, null, null, '0', null, null, null, '5', '', '2014-03-01', '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98451', '2012-12-24 17:22:42', '', '22', '', null, '100', '[]', '索尼CMT-M333NT 超值家庭立体声音响', '1000.00', '[]', '', '0', null, '', '0', '0', '2.00', 'all', '', '', '900.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '91', null, '164016', '1', null, '0', '0', '0', null, '0', '1', '0', '900.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', '2014-03-01');
 INSERT INTO `iskyshop_goods` VALUES ('98452', '2012-12-24 17:23:38', '', '40', '', null, '100', '[]', '飞利浦DBD8010  平安夜优惠折上折', '2000.00', '[]', '', '0', null, '', '0', '0', '3.00', 'all', '', '', '1960.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '91', null, '164017', '1', null, '0', '0', '0', null, '0', '2', '0', '1568.00', null, null, null, null, null, '0', null, null, null, '5', '', '2014-03-01', '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98453', '2012-12-24 17:24:56', '', '21', '', null, '100', '[]', 'BT-AUDIO家庭影院 圣诞特惠打折扣 ', '20000.00', '[]', '', '0', null, '', '0', '0', '10.00', 'all', '', '', '18888.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '91', null, '164018', '1', null, '0', '0', '0', null, '0', '0', '0', '18888.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', '2014-03-01');
 INSERT INTO `iskyshop_goods` VALUES ('98454', '2012-12-24 17:25:58', '', '83', '', null, '100', '[]', '惠威T600HT 超值组合环绕立体声5.2音响', '8000.00', '[]', '', '0', null, '', '0', '0', '4.00', 'all', '', '', '7990.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '74', null, '164019', '1', null, '0', '0', '0', null, '0', '0', '0', '7990.00', null, null, null, null, null, '1', '2013-10-14', '2014-08-10', '8200.80', '5', '', '2014-03-01', '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98455', '2012-12-24 17:26:48', '', '38', '', null, '99', '[]', '惠威2.2HT 金属质感环绕立体声5.2音响', '5000.00', '[]', '', '1', null, '', '0', '0', '5.00', 'all', '', '', '3600.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '91', null, '164021', '1', null, '0', '0', '0', null, '0', '2', '0', '2880.00', null, null, null, null, null, '0', null, null, null, '5', '', null, '', '2014-03-01');
-INSERT INTO `iskyshop_goods` VALUES ('98456', '2012-12-24 17:27:37', '', '211', '', null, '100', '[]', '??? ???BT-AUDIO ????', '5000.00', '[]', '', '0', null, '', '0', '0', '5.00', 'all', '', '', '4000.00', '', '2014-03-02 16:10:09', null, null, null, '0', '0', '0', '0', '0', '0', '91', null, '164022', '1', null, '0', '0', '0', null, '0', '0', '0', '4000.00', null, null, null, null, null, '0', null, null, null, '5', '', '2014-03-01', '', null);
-INSERT INTO `iskyshop_goods` VALUES ('98457', '2013-09-25 12:13:22', '', '11', '', null, '998', '[]', '100??????', '100.00', '[]', '', '2', null, '', '0', '1', null, 'all', '', '', '98.50', '', '2014-03-02 16:02:53', null, null, null, '0', '0', '0', '0', '0', '0', '78', null, '425996', '32769', null, '0', '0', '1', null, '0', '0', '0', '98.50', null, '0.00', '0.00', '0.00', null, '0', null, null, null, '5', '', null, '', null);
+INSERT INTO `iskyshop_goods` VALUES ('98456', '2012-12-24 17:27:37', '', '209', '', null, '100', '[]', '超豪华 立体声BT-AUDIO 听众影院', '5000.00', '[]', '', '0', null, '', '0', '0', '5.00', 'all', '', '', '4000.00', '', '2014-03-02 16:10:09', null, null, null, '0', '0', '0', '0', '0', '0', '91', null, '164022', '1', null, '0', '0', '0', null, '0', '0', '0', '4000.00', null, null, null, null, null, '0', null, null, null, '5', '', '2014-03-01', '', null);
+INSERT INTO `iskyshop_goods` VALUES ('98457', '2013-09-25 12:13:22', '', '10', '', null, '998', '[]', '100元移动充值卡', '100.00', '[]', '', '2', null, '', '0', '1', null, 'all', '', '', '98.50', '', '2014-03-02 16:02:53', null, null, null, '0', '0', '0', '0', '0', '0', '78', null, '425996', '32769', null, '0', '0', '1', null, '0', '0', '0', '98.50', null, '0.00', '0.00', '0.00', null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98458', '2013-09-25 13:31:11', '', '8', '', null, '99', '[]', '移动电源 充电宝器 正品 苹果iphone5 4S 三星手机 通用10000毫安', '295.00', '[]', '', '1', null, '', '0', '0', '0.20', 'all', '', '', '59.00', '', '2014-03-02 16:02:42', null, null, null, '0', '0', '0', '0', '0', '0', '86', null, '425997', '32769', null, '0', '0', '0', null, '0', '0', '0', '59.00', '0.10', '0.00', '0.00', '0.00', '4', '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98459', '2013-09-25 13:57:23', '', '12', '', null, '99', '[]', '小米手机官网小米2s电池小米2s 电池正品小米2S原装电池小米2电池', '199.00', '[]', '', '1', null, '', '-2', '0', '0.10', 'all', '小米电池', '小米电池', '99.00', '', null, null, null, null, '0', '0', '0', '0', '0', '0', '84', null, '426002', '32769', null, '0', '0', '0', null, '0', '0', '0', '99.00', '0.10', '20.00', '15.00', '10.00', null, '0', null, null, null, '5', '', null, '', null);
 INSERT INTO `iskyshop_goods` VALUES ('98460', '2014-03-01 12:18:42', '', '4', '<img src=\"http://demo.iskyshop.com/upload/store/1/2014/03/01/51cd8414-20ec-48aa-9524-e9aac69692e1.jpg\" alt=\"\" />', null, '200', '[]', '时尚韩版红色连衣裙 2014春季最新款', '500.00', '[{\"val\":\"中长款（衣长50-70CM）\",\"id\":\"3\",\"name\":\"衣长\"}, {\"val\":\"真丝\",\"id\":\"2\",\"name\":\"材质\"}, {\"val\":\"七分/五分袖\",\"id\":\"1\",\"name\":\"款式\"}]', '', '0', null, '', '0', '1', '0.50', 'all', '', '', '400.00', '', '2014-03-01 12:25:30', null, null, null, '0', '0', '0', '0', '0', '0', '17', '2', '426107', '1', null, '0', '0', '0', null, '0', '0', '0', '400.00', null, '0.00', '0.00', '0.00', null, '0', null, null, null, null, '', null, '', null);
@@ -5520,10 +5444,7 @@ CREATE TABLE `iskyshop_goodsbrand` (
   PRIMARY KEY  (`id`),
   KEY `FK380F53C292ACC22` (`category_id`),
   KEY `FK380F53C25F95F5C3` (`brandLogo_id`),
-  KEY `FK380F53C2537B6C51` (`user_id`),
-  KEY `FK380F53C230E5FE9C` (`user_id`),
-  KEY `FK380F53C29AF5FF2D` (`category_id`),
-  KEY `FK380F53C2F7F21A58` (`brandLogo_id`)
+  KEY `FK380F53C2537B6C51` (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -5562,11 +5483,8 @@ CREATE TABLE `iskyshop_goodscart` (
   PRIMARY KEY  (`id`),
   KEY `FK6D29FF85A995E663` (`goods_id`),
   KEY `FK6D29FF859F21119E` (`of_id`),
-  KEY `FK6D29FF851B86F0F4` (`sc_id`),
-  KEY `FK6D29FF85797D9D78` (`goods_id`),
-  KEY `FK6D29FF85B3E31589` (`sc_id`),
-  KEY `FK6D29FF85377D3633` (`of_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=229653 DEFAULT CHARSET=utf8;
+  KEY `FK6D29FF851B86F0F4` (`sc_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=229654 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_goodscart
@@ -5687,6 +5605,7 @@ INSERT INTO `iskyshop_goodscart` VALUES ('229649', '2014-03-01 18:28:08', '', '1
 INSERT INTO `iskyshop_goodscart` VALUES ('229650', '2014-03-01 18:49:52', '', '1', '2880.00', '', '98455', null, null, '132');
 INSERT INTO `iskyshop_goodscart` VALUES ('229651', '2014-03-01 21:02:01', '', '1', '4000.00', '', '98456', null, null, '133');
 INSERT INTO `iskyshop_goodscart` VALUES ('229652', '2014-03-02 12:56:17', '', '1', '600.00', '鞋码:37 ', '98331', null, null, '134');
+INSERT INTO `iskyshop_goodscart` VALUES ('229653', '2014-03-26 11:42:01', '', '1', '600.00', '', '98341', null, null, '135');
 
 -- ----------------------------
 -- Table structure for `iskyshop_goodsclass`
@@ -5711,11 +5630,8 @@ CREATE TABLE `iskyshop_goodsclass` (
   PRIMARY KEY  (`id`),
   KEY `FK381AB1B3F8D6DBC3` (`goodsType_id`),
   KEY `FK381AB1B3E16A95C9` (`parent_id`),
-  KEY `FK381AB1B3F55AC31A` (`icon_acc_id`),
-  KEY `FK381AB1B38DB6E7AF` (`icon_acc_id`),
-  KEY `FK381AB1B391330058` (`goodsType_id`),
-  KEY `FK381AB1B3549303D4` (`parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=65683 DEFAULT CHARSET=utf8;
+  KEY `FK381AB1B3F55AC31A` (`icon_acc_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=65680 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_goodsclass
@@ -6143,9 +6059,7 @@ CREATE TABLE `iskyshop_goodsclassstaple` (
   `store_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FK335B1F3C6BDDCC57` (`gc_id`),
-  KEY `FK335B1F3C920D7683` (`store_id`),
-  KEY `FK335B1F3CDF063A62` (`gc_id`),
-  KEY `FK335B1F3C61F52D98` (`store_id`)
+  KEY `FK335B1F3C920D7683` (`store_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=65538 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6220,9 +6134,7 @@ CREATE TABLE `iskyshop_goodsspecproperty` (
   `specImage_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FK1F5139F54F314235` (`specImage_id`),
-  KEY `FK1F5139F574A287A3` (`spec_id`),
-  KEY `FK1F5139F5E78D66CA` (`specImage_id`),
-  KEY `FK1F5139F566DBAAE` (`spec_id`)
+  KEY `FK1F5139F574A287A3` (`spec_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32775 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6292,8 +6204,7 @@ CREATE TABLE `iskyshop_goodstypeproperty` (
   `value` varchar(255) default NULL,
   `goodsType_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FKABDE274F8D6DBC3` (`goodsType_id`),
-  KEY `FKABDE27491330058` (`goodsType_id`)
+  KEY `FKABDE274F8D6DBC3` (`goodsType_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6311,9 +6222,7 @@ CREATE TABLE `iskyshop_goodstype_brand` (
   `type_id` bigint(20) NOT NULL,
   `brand_id` bigint(20) NOT NULL,
   KEY `FKD8CD4EE764752BDB` (`brand_id`),
-  KEY `FKD8CD4EE7D0793FD9` (`type_id`),
-  KEY `FKD8CD4EE7D79D99E6` (`brand_id`),
-  KEY `FKD8CD4EE768D5646E` (`type_id`)
+  KEY `FKD8CD4EE7D0793FD9` (`type_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6345,9 +6254,7 @@ CREATE TABLE `iskyshop_goodstype_spec` (
   `type_id` bigint(20) NOT NULL,
   `spec_id` bigint(20) NOT NULL,
   KEY `FK82E5085B74A287A3` (`spec_id`),
-  KEY `FK82E5085BD0793FD9` (`type_id`),
-  KEY `FK82E5085B66DBAAE` (`spec_id`),
-  KEY `FK82E5085B68D5646E` (`type_id`)
+  KEY `FK82E5085BD0793FD9` (`type_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6366,9 +6273,7 @@ CREATE TABLE `iskyshop_goods_combin` (
   `iskyshop_goods_id` bigint(20) NOT NULL,
   `combin_goods_id` bigint(20) NOT NULL,
   KEY `FKBA02E2801E09A074` (`iskyshop_goods_id`),
-  KEY `FKBA02E280E7269A9C` (`combin_goods_id`),
-  KEY `FKBA02E280EDF15789` (`iskyshop_goods_id`),
-  KEY `FKBA02E280B70E51B1` (`combin_goods_id`)
+  KEY `FKBA02E280E7269A9C` (`combin_goods_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6408,8 +6313,7 @@ CREATE TABLE `iskyshop_goods_floor` (
   `gf_brand_list` longtext,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FKC4188632E195105D` (`parent_id`),
-  KEY `FKC418863254BD7E68` (`parent_id`)
+  KEY `FKC4188632E195105D` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=131082 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6438,9 +6342,7 @@ CREATE TABLE `iskyshop_goods_photo` (
   `goods_id` bigint(20) NOT NULL,
   `photo_id` bigint(20) NOT NULL,
   KEY `FKC4A3A058A995E663` (`goods_id`),
-  KEY `FKC4A3A058E62DDD43` (`photo_id`),
-  KEY `FKC4A3A058797D9D78` (`goods_id`),
-  KEY `FKC4A3A0587E8A01D8` (`photo_id`)
+  KEY `FKC4A3A058E62DDD43` (`photo_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6490,9 +6392,7 @@ CREATE TABLE `iskyshop_goods_return` (
   `user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FKD3121FCA537B6C51` (`user_id`),
-  KEY `FKD3121FCA9F21119E` (`of_id`),
-  KEY `FKD3121FCA30E5FE9C` (`user_id`),
-  KEY `FKD3121FCA377D3633` (`of_id`)
+  KEY `FKD3121FCA9F21119E` (`of_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6514,9 +6414,7 @@ CREATE TABLE `iskyshop_goods_returnitem` (
   `gr_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FKBA3AA5DD79982ABE` (`gr_id`),
-  KEY `FKBA3AA5DDA995E663` (`goods_id`),
-  KEY `FKBA3AA5DD6B7D7E13` (`gr_id`),
-  KEY `FKBA3AA5DD797D9D78` (`goods_id`)
+  KEY `FKBA3AA5DDA995E663` (`goods_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6538,10 +6436,7 @@ CREATE TABLE `iskyshop_goods_returnlog` (
   PRIMARY KEY  (`id`),
   KEY `FK8A22F73A79982ABE` (`gr_id`),
   KEY `FK8A22F73A95A12042` (`return_user_id`),
-  KEY `FK8A22F73A9F21119E` (`of_id`),
-  KEY `FK8A22F73A6B7D7E13` (`gr_id`),
-  KEY `FK8A22F73A730BB28D` (`return_user_id`),
-  KEY `FK8A22F73A377D3633` (`of_id`)
+  KEY `FK8A22F73A9F21119E` (`of_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6557,9 +6452,7 @@ CREATE TABLE `iskyshop_goods_spec` (
   `goods_id` bigint(20) NOT NULL,
   `spec_id` bigint(20) NOT NULL,
   KEY `FK37E5B8D5A995E663` (`goods_id`),
-  KEY `FK37E5B8D5F8EE6C2E` (`spec_id`),
-  KEY `FK37E5B8D5797D9D78` (`goods_id`),
-  KEY `FK37E5B8D560BB2BC3` (`spec_id`)
+  KEY `FK37E5B8D5F8EE6C2E` (`spec_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6754,9 +6647,7 @@ CREATE TABLE `iskyshop_goods_ugc` (
   `goods_id` bigint(20) NOT NULL,
   `class_id` bigint(20) NOT NULL,
   KEY `FK6D2877B7AF32ECE6` (`class_id`),
-  KEY `FK6D2877B7A995E663` (`goods_id`),
-  KEY `FK6D2877B75D0F5D71` (`class_id`),
-  KEY `FK6D2877B7797D9D78` (`goods_id`)
+  KEY `FK6D2877B7A995E663` (`goods_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6949,8 +6840,7 @@ CREATE TABLE `iskyshop_group_area` (
   `parent_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FK72D6441ED32BF465` (`parent_id`),
-  KEY `FK72D6441E6B8818FA` (`parent_id`)
+  KEY `FK72D6441ED32BF465` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -6978,8 +6868,7 @@ CREATE TABLE `iskyshop_group_class` (
   `parent_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FKE80BA8071C634840` (`parent_id`),
-  KEY `FKE80BA8078F8BB64B` (`parent_id`)
+  KEY `FKE80BA8071C634840` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7025,12 +6914,7 @@ CREATE TABLE `iskyshop_group_goods` (
   KEY `FKE84595E55D2DC6AF` (`gg_gc_id`),
   KEY `FKE84595E5493829C3` (`group_id`),
   KEY `FKE84595E5E08B86E2` (`gg_goods_id`),
-  KEY `FKE84595E513F58A16` (`gg_ga_id`),
-  KEY `FKE84595E5986CA6E6` (`gg_img_id`),
-  KEY `FKE84595E5D05634BA` (`gg_gc_id`),
-  KEY `FKE84595E5191FE0D8` (`group_id`),
-  KEY `FKE84595E5B0733DF7` (`gg_goods_id`),
-  KEY `FKE84595E5AC51AEAB` (`gg_ga_id`)
+  KEY `FKE84595E513F58A16` (`gg_ga_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32780 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7085,8 +6969,7 @@ CREATE TABLE `iskyshop_homepage` (
   `owner_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FK578589FFBF621C69` (`owner_id`),
-  KEY `FK578589FF9CCCAEB4` (`owner_id`)
+  KEY `FK578589FFBF621C69` (`owner_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7117,9 +7000,7 @@ CREATE TABLE `iskyshop_homepage_goodsclass` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `FK415A1E22537B6C51` (`user_id`),
-  KEY `FK415A1E226BDDCC57` (`gc_id`),
-  KEY `FK415A1E22DF063A62` (`gc_id`),
-  KEY `FK415A1E2230E5FE9C` (`user_id`)
+  KEY `FK415A1E226BDDCC57` (`gc_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7183,9 +7064,7 @@ CREATE TABLE `iskyshop_integrallog` (
   `operate_user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FKEC2A9E67F65B7CBE` (`integral_user_id`),
-  KEY `FKEC2A9E67C8F25896` (`operate_user_id`),
-  KEY `FKEC2A9E67D3C60F09` (`integral_user_id`),
-  KEY `FKEC2A9E67A65CEAE1` (`operate_user_id`)
+  KEY `FKEC2A9E67C8F25896` (`operate_user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1835240 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7412,8 +7291,8 @@ INSERT INTO `iskyshop_integrallog` VALUES ('1835234', '2014-03-02 12:29:17', '',
 INSERT INTO `iskyshop_integrallog` VALUES ('1835235', '2014-03-02 15:05:45', '', '用户2014-03-02 15:05:45登录增加0分', '0', 'login', '32783', null);
 INSERT INTO `iskyshop_integrallog` VALUES ('1835236', '2014-03-03 08:17:26', '', '用户2014-03-03 08:17:26登录增加0分', '0', 'login', '32778', null);
 INSERT INTO `iskyshop_integrallog` VALUES ('1835237', '2014-03-03 09:43:45', '', '用户2014-03-03 09:43:45登录增加0分', '0', 'login', '1', null);
-INSERT INTO `iskyshop_integrallog` VALUES ('1835238', '2014-03-19 11:18:18', '', '??2014-03-19 11:18:18????0?', '0', 'login', '1', null);
-INSERT INTO `iskyshop_integrallog` VALUES ('1835239', '2014-03-19 14:23:57', '', '??2014-03-19 14:23:57????0?', '0', 'login', '32768', null);
+INSERT INTO `iskyshop_integrallog` VALUES ('1835238', '2014-03-26 14:25:18', '', '用户注册增加0分', '0', 'reg', '32784', null);
+INSERT INTO `iskyshop_integrallog` VALUES ('1835239', '2014-03-26 14:25:18', '', '用户2014-03-26 14:25:18登录增加0分', '0', 'login', '32784', null);
 
 -- ----------------------------
 -- Table structure for `iskyshop_integral_goods`
@@ -7446,8 +7325,7 @@ CREATE TABLE `iskyshop_integral_goods` (
   `ig_transfee_type` int(11) NOT NULL,
   `ig_goods_img_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FKDCFD0854F326849C` (`ig_goods_img_id`),
-  KEY `FKDCFD08548B82A931` (`ig_goods_img_id`)
+  KEY `FKDCFD0854F326849C` (`ig_goods_img_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7490,9 +7368,7 @@ CREATE TABLE `iskyshop_integral_goodscart` (
   `order_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FK8C073974B96C5317` (`goods_id`),
-  KEY `FK8C07397494B72647` (`order_id`),
-  KEY `FK8C073974C74A252C` (`goods_id`),
-  KEY `FK8C07397426825952` (`order_id`)
+  KEY `FK8C07397494B72647` (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7522,9 +7398,7 @@ CREATE TABLE `iskyshop_integral_goodsorder` (
   `igo_user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FKF590937A26B00318` (`igo_addr_id`),
-  KEY `FKF590937A85110923` (`igo_user_id`),
-  KEY `FKF590937A9B8648ED` (`igo_addr_id`),
-  KEY `FKF590937A627B9B6E` (`igo_user_id`)
+  KEY `FKF590937A85110923` (`igo_user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7550,17 +7424,14 @@ CREATE TABLE `iskyshop_message` (
   PRIMARY KEY  (`id`),
   KEY `FK86FF3FD68D202D76` (`toUser_id`),
   KEY `FK86FF3FD6323CF700` (`parent_id`),
-  KEY `FK86FF3FD6F3DB4167` (`fromUser_id`),
-  KEY `FK86FF3FD66A8ABFC1` (`toUser_id`),
-  KEY `FK86FF3FD6A7133CD5` (`parent_id`),
-  KEY `FK86FF3FD6D145D3B2` (`fromUser_id`)
+  KEY `FK86FF3FD6F3DB4167` (`fromUser_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_message
 -- ----------------------------
 INSERT INTO `iskyshop_message` VALUES ('2', '2013-05-06 18:13:38', '', '<p>\r\n	,您好!\r\n</p>\r\n<p>\r\n	&nbsp;&nbsp; 您的商品被管理员删除！原因是:\r\n</p>', '0', '商品被管理员删除时的通知', '0', '1', null, null, '0');
-INSERT INTO `iskyshop_message` VALUES ('3', '2014-03-01 17:11:46', '', '123', '1', null, '1', '32775', null, '32768', '0');
+INSERT INTO `iskyshop_message` VALUES ('3', '2014-03-01 17:11:46', '', '123', '0', null, '1', '32775', null, '32768', '0');
 
 -- ----------------------------
 -- Table structure for `iskyshop_mobileverifycode`
@@ -7665,14 +7536,7 @@ CREATE TABLE `iskyshop_orderform` (
   KEY `FK2B4C521920D7683` (`store_id`),
   KEY `FK2B4C5212601E900` (`ec_id`),
   KEY `FK2B4C521800F0EBF` (`ci_id`),
-  KEY `FK2B4C5216535E531` (`return_ec_id`),
-  KEY `FK2B4C521240077F8` (`payment_id`),
-  KEY `FK2B4C521F3377CCA` (`ci_id`),
-  KEY `FK2B4C521D3DE598B` (`ec_id`),
-  KEY `FK2B4C52130E5FE9C` (`user_id`),
-  KEY `FK2B4C521131255BC` (`return_ec_id`),
-  KEY `FK2B4C52169F0AC1B` (`addr_id`),
-  KEY `FK2B4C52161F52D98` (`store_id`)
+  KEY `FK2B4C5216535E531` (`return_ec_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=229439 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7752,9 +7616,7 @@ CREATE TABLE `iskyshop_order_log` (
   `of_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FK2B18AE243E73256` (`log_user_id`),
-  KEY `FK2B18AE29F21119E` (`of_id`),
-  KEY `FK2B18AE22151C4A1` (`log_user_id`),
-  KEY `FK2B18AE2377D3633` (`of_id`)
+  KEY `FK2B18AE29F21119E` (`of_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=295061 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7931,8 +7793,7 @@ CREATE TABLE `iskyshop_partner` (
   `url` varchar(255) default NULL,
   `image_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK1ED11C97FEE5357A` (`image_id`),
-  KEY `FK1ED11C9797415A0F` (`image_id`)
+  KEY `FK1ED11C97FEE5357A` (`image_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -7981,8 +7842,7 @@ CREATE TABLE `iskyshop_payment` (
   `weixin_partnerKey` longtext,
   `weixin_paySignKey` longtext,
   PRIMARY KEY  (`id`),
-  KEY `FK1F3071D5920D7683` (`store_id`),
-  KEY `FK1F3071D561F52D98` (`store_id`)
+  KEY `FK1F3071D5920D7683` (`store_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -8024,9 +7884,7 @@ CREATE TABLE `iskyshop_predeposit` (
   `pd_user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FK6586306CB8A08C38` (`pd_admin_id`),
-  KEY `FK6586306CAAE7ED06` (`pd_user_id`),
-  KEY `FK6586306C960B1E83` (`pd_admin_id`),
-  KEY `FK6586306C88527F51` (`pd_user_id`)
+  KEY `FK6586306CAAE7ED06` (`pd_user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -8055,9 +7913,7 @@ CREATE TABLE `iskyshop_predeposit_cash` (
   `cash_user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FKC48C67263D30AB45` (`cash_user_id`),
-  KEY `FKC48C67266F6F95D9` (`cash_admin_id`),
-  KEY `FKC48C67261A9B3D90` (`cash_user_id`),
-  KEY `FKC48C67264CDA2824` (`cash_admin_id`)
+  KEY `FKC48C67266F6F95D9` (`cash_admin_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -8082,10 +7938,7 @@ CREATE TABLE `iskyshop_predeposit_log` (
   PRIMARY KEY  (`id`),
   KEY `FKDD0C74D11B0A508B` (`pd_log_user_id`),
   KEY `FKDD0C74D1321DC511` (`predeposit_id`),
-  KEY `FKDD0C74D14CCA9953` (`pd_log_admin_id`),
-  KEY `FKDD0C74D1F874E2D6` (`pd_log_user_id`),
-  KEY `FKDD0C74D1A546331C` (`predeposit_id`),
-  KEY `FKDD0C74D12A352B9E` (`pd_log_admin_id`)
+  KEY `FKDD0C74D14CCA9953` (`pd_log_admin_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -8111,9 +7964,7 @@ CREATE TABLE `iskyshop_refund_log` (
   `refund_user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FKC075AFCE8E17FA8A` (`refund_user_id`),
-  KEY `FKC075AFCE9F21119E` (`of_id`),
-  KEY `FKC075AFCE6B828CD5` (`refund_user_id`),
-  KEY `FKC075AFCE377D3633` (`of_id`)
+  KEY `FKC075AFCE9F21119E` (`of_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -8145,13 +7996,7 @@ CREATE TABLE `iskyshop_report` (
   KEY `FKEBD95F85EBD92B44` (`acc2_id`),
   KEY `FKEBD95F85537B6C51` (`user_id`),
   KEY `FKEBD95F85EBD99FA3` (`acc3_id`),
-  KEY `FKEBD95F85EBD8B6E5` (`acc1_id`),
-  KEY `FKEBD95F85797D9D78` (`goods_id`),
-  KEY `FKEBD95F85D62527E4` (`subject_id`),
-  KEY `FKEBD95F8584354FD9` (`acc2_id`),
-  KEY `FKEBD95F8530E5FE9C` (`user_id`),
-  KEY `FKEBD95F858435C438` (`acc3_id`),
-  KEY `FKEBD95F858434DB7A` (`acc1_id`)
+  KEY `FKEBD95F85EBD8B6E5` (`acc1_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -8169,8 +8014,7 @@ CREATE TABLE `iskyshop_report_subject` (
   `title` varchar(255) default NULL,
   `type_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK8CD20672965F1C05` (`type_id`),
-  KEY `FK8CD206729878A10` (`type_id`)
+  KEY `FK8CD20672965F1C05` (`type_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -9001,9 +8845,7 @@ CREATE TABLE `iskyshop_return_gsp` (
   `item_id` bigint(20) NOT NULL,
   `gsp_id` bigint(20) NOT NULL,
   KEY `FK76265F4682419B49` (`item_id`),
-  KEY `FK76265F4626F16245` (`gsp_id`),
-  KEY `FK76265F468FF33C1E` (`item_id`),
-  KEY `FK76265F468EBE21DA` (`gsp_id`)
+  KEY `FK76265F4626F16245` (`gsp_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -9028,8 +8870,7 @@ CREATE TABLE `iskyshop_role` (
   `type` varchar(255) default NULL,
   `rg_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK7D72EB07C95D7AF7` (`rg_id`),
-  KEY `FK7D72EB0761B99F8C` (`rg_id`)
+  KEY `FK7D72EB07C95D7AF7` (`rg_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -9194,9 +9035,7 @@ CREATE TABLE `iskyshop_role_res` (
   `role_id` bigint(20) NOT NULL,
   `res_id` bigint(20) NOT NULL,
   KEY `FK6494F768261DF063` (`res_id`),
-  KEY `FK6494F768AE50A871` (`role_id`),
-  KEY `FK6494F7682D4268B8` (`res_id`),
-  KEY `FK6494F7688BBB3ABC` (`role_id`)
+  KEY `FK6494F768AE50A871` (`role_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10055,17 +9894,7 @@ CREATE TABLE `iskyshop_spare_goods` (
   KEY `FK6124F03DA4536527` (`img1_id`),
   KEY `FK6124F03DA453D986` (`img2_id`),
   KEY `FK6124F03DA45536A3` (`img5_id`),
-  KEY `FK6124F03DE2CED19E` (`sgf_id`),
-  KEY `FK6124F03DF0807273` (`sgf_id`),
-  KEY `FK6124F03DD23AF5C` (`area_id`),
-  KEY `FK6124F03D8D51B7ED` (`main_img_id`),
-  KEY `FK6124F03D3CB0E6D9` (`img4_id`),
-  KEY `FK6124F03D3CB0727A` (`img3_id`),
-  KEY `FK6124F03D3CAF89BC` (`img1_id`),
-  KEY `FK6124F03D30E5FE9C` (`user_id`),
-  KEY `FK6124F03D3CB15B38` (`img5_id`),
-  KEY `FK6124F03D3CAFFE1B` (`img2_id`),
-  KEY `FK6124F03D632D9D18` (`spareGoodsClass_id`)
+  KEY `FK6124F03DE2CED19E` (`sgf_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10108,8 +9937,7 @@ CREATE TABLE `iskyshop_spare_goodsclass` (
   `viewInFloor` bit(1) default b'1',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FKAC6B673B93F273F2` (`parent_id`),
-  KEY `FKAC6B673BA1A414C7` (`parent_id`)
+  KEY `FKAC6B673B93F273F2` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=154 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10293,10 +10121,7 @@ CREATE TABLE `iskyshop_spare_goodsfloor` (
   KEY `FKAC95E1CFE2A2F9ED` (`sgc_id`),
   KEY `FKAC95E1CF8DEA4DD` (`advert_img_id`),
   KEY `FKAC95E1CF20641F1` (`advert_id`),
-  KEY `FKAC95E1CF26BE20C1` (`adp_id`),
-  KEY `FKAC95E1CFD49A914C` (`adp_id`),
-  KEY `FKAC95E1CFF0549AC2` (`sgc_id`),
-  KEY `FKAC95E1CFA13AC972` (`advert_img_id`)
+  KEY `FKAC95E1CF26BE20C1` (`adp_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10373,17 +10198,7 @@ CREATE TABLE `iskyshop_store` (
   KEY `FK30FAE0709201C3B8` (`sc_id`),
   KEY `FK30FAE07059BC5EF2` (`store_license_id`),
   KEY `FK30FAE070CA8E3053` (`weixin_qr_img_id`),
-  KEY `FK30FAE0708244156B` (`store_weixin_logo_id`),
-  KEY `FK30FAE070D23AF5C` (`area_id`),
-  KEY `FK30FAE070DA061FF1` (`update_grade_id`),
-  KEY `FK30FAE070438553B` (`grade_id`),
-  KEY `FK30FAE07062EA54E8` (`weixin_qr_img_id`),
-  KEY `FK30FAE070E3B04A61` (`store_logo_id`),
-  KEY `FK30FAE07058E074C0` (`store_banner_id`),
-  KEY `FK30FAE070EB82303A` (`card_id`),
-  KEY `FK30FAE0701AA03A00` (`store_weixin_logo_id`),
-  KEY `FK30FAE07052A31C3` (`sc_id`),
-  KEY `FK30FAE070F2188387` (`store_license_id`)
+  KEY `FK30FAE0708244156B` (`store_weixin_logo_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32774 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10413,10 +10228,8 @@ CREATE TABLE `iskyshop_storecart` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `FK7EE3A390537B6C51` (`user_id`),
-  KEY `FK7EE3A390920D7683` (`store_id`),
-  KEY `FK7EE3A39030E5FE9C` (`user_id`),
-  KEY `FK7EE3A39061F52D98` (`store_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=135 DEFAULT CHARSET=utf8;
+  KEY `FK7EE3A390920D7683` (`store_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=136 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_storecart
@@ -10500,6 +10313,7 @@ INSERT INTO `iskyshop_storecart` VALUES ('131', '2014-03-01 18:28:08', '', '95a2
 INSERT INTO `iskyshop_storecart` VALUES ('132', '2014-03-01 18:49:52', '', '5e504d35-4c10-4101-8b1d-aafd5268f15e', '2880.00', '1', null, '0');
 INSERT INTO `iskyshop_storecart` VALUES ('133', '2014-03-01 21:02:01', '', '0022370d-ce04-4c13-bc23-dc52bfbab68e', '4000.00', '1', null, '0');
 INSERT INTO `iskyshop_storecart` VALUES ('134', '2014-03-02 12:56:17', '', 'e399f243-376a-4ad8-90dd-a3d280f2c1c0', '600.00', '1', null, '0');
+INSERT INTO `iskyshop_storecart` VALUES ('135', '2014-03-26 11:42:01', '', null, '600.00', '1', '1', '0');
 
 -- ----------------------------
 -- Table structure for `iskyshop_storeclass`
@@ -10517,8 +10331,7 @@ CREATE TABLE `iskyshop_storeclass` (
   `service_evaluate` decimal(4,1) default NULL,
   `ship_evaluate` decimal(4,1) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK5D958F086E5731E` (`parent_id`),
-  KEY `FK5D958F087A0DE129` (`parent_id`)
+  KEY `FK5D958F086E5731E` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10588,8 +10401,7 @@ CREATE TABLE `iskyshop_storegrade_log` (
   `store_grade_status` int(11) NOT NULL,
   `store_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK10CE6C6C920D7683` (`store_id`),
-  KEY `FK10CE6C6C61F52D98` (`store_id`)
+  KEY `FK10CE6C6C920D7683` (`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10612,8 +10424,7 @@ CREATE TABLE `iskyshop_store_nav` (
   `win_type` varchar(255) default NULL,
   `store_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK7EE200D4920D7683` (`store_id`),
-  KEY `FK7EE200D461F52D98` (`store_id`)
+  KEY `FK7EE200D4920D7683` (`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10633,8 +10444,7 @@ CREATE TABLE `iskyshop_store_partner` (
   `url` varchar(255) default NULL,
   `store_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FKB357F3F9920D7683` (`store_id`),
-  KEY `FKB357F3F961F52D98` (`store_id`)
+  KEY `FKB357F3F9920D7683` (`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10675,20 +10485,19 @@ CREATE TABLE `iskyshop_store_point` (
   `statTime` datetime default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FK4E878501920D7683` (`store_id`),
-  KEY `FK4E87850161F52D98` (`store_id`)
+  KEY `FK4E878501920D7683` (`store_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32774 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_store_point
 -- ----------------------------
-INSERT INTO `iskyshop_store_point` VALUES ('1', '2013-01-05 15:07:48', '', '4.7', '0.0', '0', '0', '0', '0', '0', '2.0', '0.0', '0', '0', '0', '0', '0', '2.8', '2.8', '0', '0', '0', '0', '0', '0.7', '1', '2014-03-20 10:30:00');
-INSERT INTO `iskyshop_store_point` VALUES ('32768', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32768', '2014-03-20 10:30:00');
-INSERT INTO `iskyshop_store_point` VALUES ('32769', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32769', '2014-03-20 10:30:00');
-INSERT INTO `iskyshop_store_point` VALUES ('32770', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32770', '2014-03-20 10:30:00');
-INSERT INTO `iskyshop_store_point` VALUES ('32771', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32771', '2014-03-20 10:30:00');
-INSERT INTO `iskyshop_store_point` VALUES ('32772', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32772', '2014-03-20 10:30:00');
-INSERT INTO `iskyshop_store_point` VALUES ('32773', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32773', '2014-03-20 10:30:00');
+INSERT INTO `iskyshop_store_point` VALUES ('1', '2013-01-05 15:07:48', '', '4.7', '0.0', '0', '0', '0', '0', '0', '2.0', '0.0', '0', '0', '0', '0', '0', '2.8', '2.8', '0', '0', '0', '0', '0', '0.7', '1', '2014-03-26 14:00:01');
+INSERT INTO `iskyshop_store_point` VALUES ('32768', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32768', '2014-03-26 14:00:01');
+INSERT INTO `iskyshop_store_point` VALUES ('32769', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32769', '2014-03-26 14:00:01');
+INSERT INTO `iskyshop_store_point` VALUES ('32770', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32770', '2014-03-26 14:00:01');
+INSERT INTO `iskyshop_store_point` VALUES ('32771', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32771', '2014-03-26 14:00:01');
+INSERT INTO `iskyshop_store_point` VALUES ('32772', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32772', '2014-03-26 14:00:01');
+INSERT INTO `iskyshop_store_point` VALUES ('32773', null, '', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0.0', '32773', '2014-03-26 14:00:01');
 
 -- ----------------------------
 -- Table structure for `iskyshop_store_slide`
@@ -10703,9 +10512,7 @@ CREATE TABLE `iskyshop_store_slide` (
   `store_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FK4EB06D22920D7683` (`store_id`),
-  KEY `FK4EB06D22DD494C94` (`acc_id`),
-  KEY `FK4EB06D2261F52D98` (`store_id`),
-  KEY `FK4EB06D2275A57129` (`acc_id`)
+  KEY `FK4EB06D22DD494C94` (`acc_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -10738,7 +10545,7 @@ CREATE TABLE `iskyshop_store_stat` (
 -- ----------------------------
 -- Records of iskyshop_store_stat
 -- ----------------------------
-INSERT INTO `iskyshop_store_stat` VALUES ('1', '2014-03-20 10:30:00', '', '172', '7', '15', '2014-03-20 11:00:00', '0.00', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `iskyshop_store_stat` VALUES ('1', '2014-03-26 14:00:00', '', '172', '7', '15', '2014-03-26 14:30:00', '0.00', '0', '0', '0', '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for `iskyshop_sysconfig`
@@ -10876,19 +10683,13 @@ CREATE TABLE `iskyshop_sysconfig` (
   KEY `FK40DBBC5ED57299C2` (`memberIcon_id`),
   KEY `FK40DBBC5EE23B16D0` (`goodsImage_id`),
   KEY `FK40DBBC5ECA8E3053` (`weixin_qr_img_id`),
-  KEY `FK40DBBC5E8244156B` (`store_weixin_logo_id`),
-  KEY `FK40DBBC5E286866C4` (`websiteLogo_id`),
-  KEY `FK40DBBC5EF79E1F0` (`storeImage_id`),
-  KEY `FK40DBBC5E62EA54E8` (`weixin_qr_img_id`),
-  KEY `FK40DBBC5E6DCEBE57` (`memberIcon_id`),
-  KEY `FK40DBBC5E1AA03A00` (`store_weixin_logo_id`),
-  KEY `FK40DBBC5E7A973B65` (`goodsImage_id`)
+  KEY `FK40DBBC5E8244156B` (`store_weixin_logo_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_sysconfig
 -- ----------------------------
-INSERT INTO `iskyshop_sysconfig` VALUES ('1', '2014-03-03 14:47:41', '', '', '1024', '1024', '系统维护中...', '', '30', '0', null, '{\"creditrule29\":1500,\"creditrule28\":1401,\"creditrule27\":1400,\"creditrule26\":1301,\"creditrule25\":1300,\"creditrule24\":1201,\"creditrule23\":1200,\"creditrule22\":1101,\"creditrule21\":1100,\"creditrule20\":1001,\"creditrule2\":101,\"creditrule1\":100,\"creditrule4\":201,\"creditrule3\":200,\"creditrule0\":1,\"creditrule19\":1000,\"creditrule18\":901,\"creditrule9\":500,\"creditrule7\":400,\"creditrule15\":800,\"creditrule8\":401,\"creditrule14\":701,\"creditrule5\":300,\"creditrule17\":900,\"creditrule6\":301,\"creditrule16\":801,\"creditrule11\":600,\"creditrule10\":501,\"creditrule13\":700,\"creditrule12\":601}', '', 'iskyshop1', '', 'smtp.exmail.qq.com', '25', 'test1234', 'erikchang@163.com', 'email_test@iskyshop.com', 'email_test@iskyshop.com', '0', '', '10', '', 'iphone5s,男装,女装,毛呢外套,雪地靴,羽绒服,流行男鞋,潮棉衣,秋冬连衣裙,打底裤,时尚女包', '1024', 'sidYearMonthDayImg', 'gif|jpg|jpeg|bmp|png|tbi', '0', '', '0', '', 'iskyshop1', '0', '0', '300', '300', '', '', '', 'normal', '<div id=\"bdshare\" class=\"bdshare_t bds_tools get-codes-bdshare\">\r\n<a class=\"bds_tsina\"></a>\r\n<a class=\"bds_tqq\"></a>\r\n<span class=\"bds_more\">更多</span>\r\n<a class=\"shareCount\"></a>\r\n</div>\r\n<script type=\"text/javascript\" id=\"bdshare_js\" data=\"type=tools&uid=5015224\" ></script>\r\n<script type=\"text/javascript\" id=\"bdshell_js\"></script>\r\n<script type=\"text/javascript\">\r\ndocument.getElementById(\"bdshell_js\").src = \"http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=\" + Math.ceil(new Date()/3600000)\r\n</script>', '160', '160', '', '123456', '13641194411', null, 'iskyshop_admin', '', '{\"alipay_wap\":true,\"balance\":true,\"payafter\":true,\"weixin\":true,\"alipay\":true,\"paypal\":true,\"outline\":true}', 'zh_cn', 'default\r\nblue\r\npink\r\ngreen\r\nblack\r\nviolet\r\nbeach\r\nchina\r\nclothes\r\nwood\r\nlovely\r\nembossed\r\ntea\r\nclassic_black\r\nredware\r\ncoloured_glaze\r\norange\r\nchocolate\r\nbamboo\r\nflax', 'ISkyShop多用户商城系统 V1.4免费版', 'upload', '{\"creditrule29\":800,\"creditrule28\":751,\"creditrule27\":700,\"creditrule26\":651,\"creditrule25\":650,\"creditrule24\":601,\"creditrule23\":600,\"creditrule22\":551,\"creditrule21\":550,\"creditrule20\":501,\"creditrule2\":51,\"creditrule1\":50,\"creditrule4\":101,\"creditrule3\":100,\"creditrule0\":1,\"creditrule19\":500,\"creditrule18\":451,\"creditrule9\":250,\"creditrule7\":200,\"creditrule15\":400,\"creditrule8\":201,\"creditrule14\":351,\"creditrule5\":150,\"creditrule17\":450,\"creditrule6\":151,\"creditrule16\":401,\"creditrule11\":300,\"creditrule10\":251,\"creditrule13\":350,\"creditrule12\":301}', '', '', 'ISkyShop', '', '30', '', '1', '2', '3', null, '3', '', 'bbs\r\nforum', '', '', '', '', '<meta property=\"wb:webmaster\" content=\"3c0d2bedd819ab1c\" />', '', '1040103781', '1269d747b443e5ce4b68fcf3e2707165', null, '2014-03-03 00:00:02', '0', '0', '7', '3', '20', '8.00', '', '1', '天天特价', '2532157137\r\n2404860479', '024-25872040', '0', '', '4c68365adbe58d72', '', '', '', '', '', '', '', '', '', '', '¥', '3', '30', '1', '买就送', 'blue', '60', '5', '0', '7', '7', '', '50', '0', 'iskyshop_c2c微商城', 'jkdserdfger3dfgdfgvbd54dfgdf', '34sdfsdfsdge34sdgsdgdshtgf657sdfgsd43sdfsdgsd', 'iskyshop_c2c', '微信关注欢迎词\r\n          \r\n          \r\n          \r\n          ', null, '426063');
+INSERT INTO `iskyshop_sysconfig` VALUES ('1', '2014-03-26 11:39:50', '', '', '1024', '1024', '系统维护中...', '', '30', '0', null, '{\"creditrule29\":1500,\"creditrule28\":1401,\"creditrule27\":1400,\"creditrule26\":1301,\"creditrule25\":1300,\"creditrule24\":1201,\"creditrule23\":1200,\"creditrule22\":1101,\"creditrule21\":1100,\"creditrule20\":1001,\"creditrule2\":101,\"creditrule1\":100,\"creditrule4\":201,\"creditrule3\":200,\"creditrule0\":1,\"creditrule19\":1000,\"creditrule18\":901,\"creditrule9\":500,\"creditrule7\":400,\"creditrule15\":800,\"creditrule8\":401,\"creditrule14\":701,\"creditrule5\":300,\"creditrule17\":900,\"creditrule6\":301,\"creditrule16\":801,\"creditrule11\":600,\"creditrule10\":501,\"creditrule13\":700,\"creditrule12\":601}', '', 'iskyshop1', '', 'smtp.ym.163.com', '25', 'Rmtsvcsull23', 'suhao@55317.com.cn', 'admin@uzisu.com', 'admin@uzisu.com', '0', '', '10', '', 'iphone5s,男装,女装,毛呢外套,雪地靴,羽绒服,流行男鞋,潮棉衣,秋冬连衣裙,打底裤,时尚女包', '1024', 'sidYearMonthDayImg', 'gif|jpg|jpeg|bmp|png|tbi', '0', '', '0', '', 'iskyshop1', '0', '0', '300', '300', '', '', '', 'normal', '<div id=\"bdshare\" class=\"bdshare_t bds_tools get-codes-bdshare\">\r\n<a class=\"bds_tsina\"></a>\r\n<a class=\"bds_tqq\"></a>\r\n<span class=\"bds_more\">更多</span>\r\n<a class=\"shareCount\"></a>\r\n</div>\r\n<script type=\"text/javascript\" id=\"bdshare_js\" data=\"type=tools&uid=5015224\" ></script>\r\n<script type=\"text/javascript\" id=\"bdshell_js\"></script>\r\n<script type=\"text/javascript\">\r\ndocument.getElementById(\"bdshell_js\").src = \"http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=\" + Math.ceil(new Date()/3600000)\r\n</script>', '160', '160', '', '123456', '13641194411', null, 'iskyshop_admin', '', '{\"alipay_wap\":true,\"balance\":true,\"payafter\":true,\"weixin\":true,\"alipay\":true,\"paypal\":true,\"outline\":true}', 'zh_cn', 'default\r\nblue\r\npink\r\ngreen\r\nblack\r\nviolet\r\nbeach\r\nchina\r\nclothes\r\nwood\r\nlovely\r\nembossed\r\ntea\r\nclassic_black\r\nredware\r\ncoloured_glaze\r\norange\r\nchocolate\r\nbamboo\r\nflax', '柚子树', 'upload', '{\"creditrule29\":800,\"creditrule28\":751,\"creditrule27\":700,\"creditrule26\":651,\"creditrule25\":650,\"creditrule24\":601,\"creditrule23\":600,\"creditrule22\":551,\"creditrule21\":550,\"creditrule20\":501,\"creditrule2\":51,\"creditrule1\":50,\"creditrule4\":101,\"creditrule3\":100,\"creditrule0\":1,\"creditrule19\":500,\"creditrule18\":451,\"creditrule9\":250,\"creditrule7\":200,\"creditrule15\":400,\"creditrule8\":201,\"creditrule14\":351,\"creditrule5\":150,\"creditrule17\":450,\"creditrule6\":151,\"creditrule16\":401,\"creditrule11\":300,\"creditrule10\":251,\"creditrule13\":350,\"creditrule12\":301}', '', '', '柚子树', '', '30', '', '1', '2', '3', null, '3', '', 'bbs\r\nforum', '', '', '', '', '<meta property=\"wb:webmaster\" content=\"3c0d2bedd819ab1c\" />', '', '1040103781', '1269d747b443e5ce4b68fcf3e2707165', null, '2014-03-26 00:00:05', '0', '0', '7', '3', '20', '8.00', '', '1', '天天特价', '2532157137\r\n2404860479', '024-25872040', '0', '', '4c68365adbe58d72', '', '', '', '', '', '', '', '', '', '', '¥', '3', '30', '1', '买就送', 'blue', '60', '5', '0', '7', '7', '', '50', '0', 'iskyshop_c2c微商城', 'jkdserdfger3dfgdfgvbd54dfgdf', '34sdfsdfsdge34sdgsdgdshtgf657sdfgsd43sdfsdgsd', 'iskyshop_c2c', '微信关注欢迎词\r\n          \r\n          \r\n          \r\n          ', null, '426063');
 
 -- ----------------------------
 -- Table structure for `iskyshop_syslog`
@@ -10904,15 +10705,15 @@ CREATE TABLE `iskyshop_syslog` (
   `type` int(11) NOT NULL,
   `user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FKEEA95FA8537B6C51` (`user_id`),
-  KEY `FKEEA95FA830E5FE9C` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  KEY `FKEEA95FA8537B6C51` (`user_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_syslog
 -- ----------------------------
 INSERT INTO `iskyshop_syslog` VALUES ('1', '2014-03-03 10:34:51', '', '于2014-03-03 10:34:51登录系统', '192.168.1.128', '用户登陆', '0', '1');
 INSERT INTO `iskyshop_syslog` VALUES ('2', '2014-03-03 10:34:59', '', '于2014-03-03 10:34:59登录系统', '192.168.1.128', '用户登陆', '0', '1');
+INSERT INTO `iskyshop_syslog` VALUES ('3', '2014-03-26 14:25:25', '', 'null��2014-03-26 14:25:25�˳�ϵͳ', '127.0.0.1', '�û��˳�', '0', '32784');
 
 -- ----------------------------
 -- Table structure for `iskyshop_template`
@@ -10987,8 +10788,7 @@ CREATE TABLE `iskyshop_transport` (
   `trans_type` int(11) default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FK58C67F38920D7683` (`store_id`),
-  KEY `FK58C67F3861F52D98` (`store_id`)
+  KEY `FK58C67F38920D7683` (`store_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -11013,8 +10813,7 @@ CREATE TABLE `iskyshop_trans_area` (
   `parent_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FKBF1379956A46B40E` (`parent_id`),
-  KEY `FKBF1379952A2D8A3` (`parent_id`)
+  KEY `FKBF1379956A46B40E` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=437 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -11500,18 +11299,14 @@ CREATE TABLE `iskyshop_user` (
   KEY `FK7D74565C920D7683` (`store_id`),
   KEY `FK7D74565CE62DDD43` (`photo_id`),
   KEY `FK7D74565CD7A72F12` (`parent_id`),
-  KEY `FK7D74565C2FB91D11` (`area_id`),
-  KEY `FK7D74565CD23AF5C` (`area_id`),
-  KEY `FK7D74565CB511C15D` (`parent_id`),
-  KEY `FK7D74565C61F52D98` (`store_id`),
-  KEY `FK7D74565C7E8A01D8` (`photo_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32784 DEFAULT CHARSET=utf8;
+  KEY `FK7D74565C2FB91D11` (`area_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=32785 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_user
 -- ----------------------------
-INSERT INTO `iskyshop_user` VALUES ('1', null, '', '', '', '', null, '9620.00', null, null, '380.00', '10000', '0', '2014-03-01 12:39:08', '119.119.85.200', '816', '2014-03-19 14:22:27', '127.0.0.1', null, 'e10adc3949ba59abbe56e057f20f883e', '0', '1', '0', null, '', 'admin', 'ADMIN', '0', null, '32768', '', '1651674012', '[{\"menu_url\":\"http://localhost/seller/add_goods_first.htm\",\"menu_name\":\"????\"}, {\"menu_url\":\"http://localhost/seller/order.htm\",\"menu_name\":\"????\"}]', null, '0', '4522489');
-INSERT INTO `iskyshop_user` VALUES ('32768', '2012-12-24 12:52:13', '', null, null, null, null, null, null, 'test@iskyshop.com', null, '2580', '0', '2014-03-01 12:26:20', '119.119.85.200', '473', '2014-03-19 14:23:57', '127.0.0.1', null, 'e10adc3949ba59abbe56e057f20f883e', '0', '0', '0', null, null, 'iskyshop', 'BUYER_SELLER', '0', null, '1', '9A6383AD4B58E8B1ACF65DC68E0B3B68', null, '[{\"menu_url\":\"http://demo.iskyshop.com/seller/store_set.htm\",\"menu_name\":\"????\"}, {\"menu_url\":\"http://demo.iskyshop.com/seller/refund.htm\",\"menu_name\":\"????\"}, {\"menu_url\":\"http://demo.iskyshop.com/seller/gold_record.htm\",\"menu_name\":\"????\"}, {\"menu_url\":\"http://demo.iskyshop.com/seller/advert_list.htm\",\"menu_name\":\"????\"}]', null, '0', null);
+INSERT INTO `iskyshop_user` VALUES ('1', null, '', '', '', '', null, '9620.00', null, null, '380.00', '10000', '0', '2014-03-01 12:39:08', '119.119.85.200', '814', '2014-03-03 14:49:03', '0:0:0:0:0:0:0:1', null, 'e10adc3949ba59abbe56e057f20f883e', '0', '1', '0', null, '', 'admin', 'ADMIN', '0', null, '32768', '', '1651674012', '[{\"menu_url\":\"http://localhost/seller/add_goods_first.htm\",\"menu_name\":\"商品发布\"}, {\"menu_url\":\"http://localhost/seller/order.htm\",\"menu_name\":\"订单管理\"}]', null, '0', '4522489');
+INSERT INTO `iskyshop_user` VALUES ('32768', '2012-12-24 12:52:13', '', null, null, null, null, null, null, 'test@iskyshop.com', null, '2580', '0', '2014-03-01 12:26:20', '119.119.85.200', '472', '2014-03-02 10:22:09', '27.191.147.242', null, 'e10adc3949ba59abbe56e057f20f883e', '0', '0', '0', null, null, 'iskyshop', 'BUYER_SELLER', '0', null, '1', '9A6383AD4B58E8B1ACF65DC68E0B3B68', null, '[{\"menu_url\":\"http://demo.iskyshop.com/seller/store_set.htm\",\"menu_name\":\"店铺设置\"}, {\"menu_url\":\"http://demo.iskyshop.com/seller/refund.htm\",\"menu_name\":\"退款记录\"}, {\"menu_url\":\"http://demo.iskyshop.com/seller/gold_record.htm\",\"menu_name\":\"金币管理\"}, {\"menu_url\":\"http://demo.iskyshop.com/seller/advert_list.htm\",\"menu_name\":\"广告管理\"}]', null, '0', null);
 INSERT INTO `iskyshop_user` VALUES ('32769', '2013-09-25 11:20:35', '', null, null, null, null, null, null, 'hdtx@iskyshop.com', null, '0', '0', '2013-09-25 15:14:43', '127.0.0.1', '7', '2013-09-25 15:14:43', '127.0.0.1', null, 'e10adc3949ba59abbe56e057f20f883e', '0', '0', '0', null, null, 'hdtx', 'BUYER_SELLER', '0', null, '32769', null, null, '[{\"menu_url\":\"http://localhost/seller/order.htm\",\"menu_name\":\"订单管理\"}, {\"menu_url\":\"http://localhost/seller/payment.htm\",\"menu_name\":\"支付方式\"}]', null, '0', null);
 INSERT INTO `iskyshop_user` VALUES ('32770', '2013-10-29 14:13:42', '', null, null, null, null, null, null, 'erikchang@163.com', null, '0', '0', null, null, '2', '2013-10-29 14:53:01', '0:0:0:0:0:0:0:1', null, 'e10adc3949ba59abbe56e057f20f883e', '0', '0', '0', null, null, 'erikchang', 'BUYER', '0', null, null, null, null, null, null, '0', null);
 INSERT INTO `iskyshop_user` VALUES ('32771', '2013-12-02 13:51:41', '', null, null, null, null, null, null, '123@qq.com', null, '0', '0', null, null, '1', '2013-12-02 13:51:42', '119.119.88.212', null, '4297f44b13955235245b2497399d7a93', '0', '0', '0', null, null, 'test3', 'BUYER', '0', null, null, null, null, null, null, '0', null);
@@ -11527,6 +11322,7 @@ INSERT INTO `iskyshop_user` VALUES ('32780', '2014-02-28 21:21:44', '', null, nu
 INSERT INTO `iskyshop_user` VALUES ('32781', '2014-03-01 00:04:28', '', null, null, null, null, null, null, '4464421@qq.com', null, '0', '0', '2014-03-02 19:16:16', '125.69.192.219', '6', '2014-03-02 19:16:16', '125.69.192.219', null, '895f69f67e3d4cc615e0697b2988a435', '0', '0', '0', null, null, 'qq4464421', 'BUYER_SELLER', '0', null, '32772', null, null, null, null, '0', null);
 INSERT INTO `iskyshop_user` VALUES ('32782', '2014-03-01 15:51:36', '', null, null, null, null, null, null, '2608977731@qq.com', null, '0', '0', null, null, '1', '2014-03-01 15:51:37', '61.133.7.135', null, '98c9df11d119e4d11d32af405f42c78e', '0', '0', '0', null, null, 'qq2608977731', 'BUYER_SELLER', '0', null, '32773', null, null, null, null, '0', null);
 INSERT INTO `iskyshop_user` VALUES ('32783', '2014-03-01 16:13:53', '', null, null, null, null, null, null, '627749168@qq.com', null, '0', '0', null, null, '2', '2014-03-02 15:05:45', '49.220.82.239', null, 'e10adc3949ba59abbe56e057f20f883e', '0', '0', '0', null, null, 'zhangsan', 'BUYER', '0', null, null, null, null, null, null, '0', null);
+INSERT INTO `iskyshop_user` VALUES ('32784', '2014-03-26 14:25:18', '', null, null, null, null, null, null, 'ybsue@foxmail.com', null, '0', '0', '2014-03-26 14:25:18', '127.0.0.1', '1', '2014-03-26 14:25:18', '127.0.0.1', null, 'e10adc3949ba59abbe56e057f20f883e', '0', '0', '0', null, null, 'Simple', 'BUYER', '0', null, null, null, null, null, null, '0', null);
 
 -- ----------------------------
 -- Table structure for `iskyshop_userconfig`
@@ -11539,8 +11335,7 @@ CREATE TABLE `iskyshop_userconfig` (
   `user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
-  KEY `FKA058A49E537B6C51` (`user_id`),
-  KEY `FKA058A49E30E5FE9C` (`user_id`)
+  KEY `FKA058A49E537B6C51` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -11563,9 +11358,7 @@ CREATE TABLE `iskyshop_usergoodsclass` (
   `user_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FKA45E4B3E537B6C51` (`user_id`),
-  KEY `FKA45E4B3E153E874` (`parent_id`),
-  KEY `FKA45E4B3E30E5FE9C` (`user_id`),
-  KEY `FKA45E4B3EAF3058FF` (`parent_id`)
+  KEY `FKA45E4B3E153E874` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=32777 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -11610,9 +11403,7 @@ CREATE TABLE `iskyshop_user_attention` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `FK24D92EFB8D202D76` (`toUser_id`),
-  KEY `FK24D92EFBF3DB4167` (`fromUser_id`),
-  KEY `FK24D92EFB6A8ABFC1` (`toUser_id`),
-  KEY `FK24D92EFBD145D3B2` (`fromUser_id`)
+  KEY `FK24D92EFBF3DB4167` (`fromUser_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -11634,9 +11425,7 @@ CREATE TABLE `iskyshop_user_friend` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `FK880111E18D202D76` (`toUser_id`),
-  KEY `FK880111E1F3DB4167` (`fromUser_id`),
-  KEY `FK880111E16A8ABFC1` (`toUser_id`),
-  KEY `FK880111E1D145D3B2` (`fromUser_id`)
+  KEY `FK880111E1F3DB4167` (`fromUser_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -11653,9 +11442,7 @@ CREATE TABLE `iskyshop_user_role` (
   `role_id` bigint(20) NOT NULL,
   PRIMARY KEY  (`user_id`,`role_id`),
   KEY `FK2E3F7C79AE50A871` (`role_id`),
-  KEY `FK2E3F7C79537B6C51` (`user_id`),
-  KEY `FK2E3F7C798BBB3ABC` (`role_id`),
-  KEY `FK2E3F7C7930E5FE9C` (`user_id`)
+  KEY `FK2E3F7C79537B6C51` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -12087,6 +11874,13 @@ INSERT INTO `iskyshop_user_role` VALUES ('32783', '106');
 INSERT INTO `iskyshop_user_role` VALUES ('32783', '107');
 INSERT INTO `iskyshop_user_role` VALUES ('32783', '108');
 INSERT INTO `iskyshop_user_role` VALUES ('32783', '109');
+INSERT INTO `iskyshop_user_role` VALUES ('32784', '82');
+INSERT INTO `iskyshop_user_role` VALUES ('32784', '100');
+INSERT INTO `iskyshop_user_role` VALUES ('32784', '105');
+INSERT INTO `iskyshop_user_role` VALUES ('32784', '106');
+INSERT INTO `iskyshop_user_role` VALUES ('32784', '107');
+INSERT INTO `iskyshop_user_role` VALUES ('32784', '108');
+INSERT INTO `iskyshop_user_role` VALUES ('32784', '109');
 
 -- ----------------------------
 -- Table structure for `iskyshop_visit`
@@ -12102,9 +11896,7 @@ CREATE TABLE `iskyshop_visit` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `FK2F5D44BA78563611` (`homepage_id`),
-  KEY `FK2F5D44BA537B6C51` (`user_id`),
-  KEY `FK2F5D44BA9E48AADC` (`homepage_id`),
-  KEY `FK2F5D44BA30E5FE9C` (`user_id`)
+  KEY `FK2F5D44BA537B6C51` (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -12227,9 +12019,7 @@ CREATE TABLE `iskyshop_watermark` (
   `wm_image_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
   KEY `FKD4AF0733DDEA8C3` (`wm_image_id`),
-  KEY `FKD4AF073920D7683` (`store_id`),
-  KEY `FKD4AF073D63ACD58` (`wm_image_id`),
-  KEY `FKD4AF07361F52D98` (`store_id`)
+  KEY `FKD4AF073920D7683` (`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -12249,9 +12039,8 @@ CREATE TABLE `iskyshop_ztc_gold_log` (
   `zgl_type` int(11) NOT NULL,
   `zgl_goods_id` bigint(20) default NULL,
   PRIMARY KEY  (`id`),
-  KEY `FK5A722B8C50A38BC3` (`zgl_goods_id`),
-  KEY `FK5A722B8C208B42D8` (`zgl_goods_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+  KEY `FK5A722B8C50A38BC3` (`zgl_goods_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of iskyshop_ztc_gold_log
@@ -12266,5 +12055,3 @@ INSERT INTO `iskyshop_ztc_gold_log` VALUES ('7', '2014-03-02 00:00:01', '', '直
 INSERT INTO `iskyshop_ztc_gold_log` VALUES ('8', '2014-03-02 00:00:01', '', '直通车消耗金币', '300', '1', '98450');
 INSERT INTO `iskyshop_ztc_gold_log` VALUES ('9', '2014-03-03 00:00:01', '', '直通车消耗金币', '300', '1', '98442');
 INSERT INTO `iskyshop_ztc_gold_log` VALUES ('10', '2014-03-03 00:00:01', '', '直通车消耗金币', '300', '1', '98450');
-INSERT INTO `iskyshop_ztc_gold_log` VALUES ('11', '2014-03-20 00:00:01', '', '???????', '300', '1', '98442');
-INSERT INTO `iskyshop_ztc_gold_log` VALUES ('12', '2014-03-20 00:00:01', '', '???????', '300', '1', '98450');
