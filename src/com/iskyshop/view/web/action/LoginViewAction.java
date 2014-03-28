@@ -1,5 +1,20 @@
-﻿/*** Eclipse Class Decompiler plugin, copyright (c) 2012 Chao Chen (cnfree2000@hotmail.com) ***/
-package com.iskyshop.view.web.action;
+﻿package com.iskyshop.view.web.action;
+
+import java.io.IOException;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.httpclient.HttpException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.iskyshop.core.mv.JModelAndView;
 import com.iskyshop.core.security.support.SecurityUserHolder;
@@ -7,7 +22,6 @@ import com.iskyshop.core.tools.CommUtil;
 import com.iskyshop.core.tools.Md5Encrypt;
 import com.iskyshop.foundation.domain.Album;
 import com.iskyshop.foundation.domain.IntegralLog;
-import com.iskyshop.foundation.domain.SysConfig;
 import com.iskyshop.foundation.domain.User;
 import com.iskyshop.foundation.service.IAlbumService;
 import com.iskyshop.foundation.service.IIntegralLogService;
@@ -18,21 +32,6 @@ import com.iskyshop.foundation.service.IUserService;
 import com.iskyshop.uc.api.UCClient;
 import com.iskyshop.uc.api.UCTools;
 import com.iskyshop.view.web.tools.ImageViewTools;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import org.apache.commons.httpclient.HttpException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginViewAction {
@@ -97,6 +96,7 @@ public class LoginViewAction {
         return mv;
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @RequestMapping({ "/register_finish.htm" })
     public String register_finish(HttpServletRequest request, HttpServletResponse response, String userName,
             String password, String email, String code) throws HttpException, IOException {
